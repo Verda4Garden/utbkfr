@@ -1,0 +1,136 @@
+// ===============================================================
+// Assumed Data Model
+// ===============================================================
+//
+// Collection: users
+// Document ID: userId
+// Fields:
+//   - uid: string (required)
+//   - displayName: string
+//   - email: string (required)
+//   - photoURL: string
+//   - targetFK: string
+//   - xp: integer
+//   - level: integer
+//   - badges: list
+//   - streak: integer
+//   - lastActive: timestamp
+//
+// Collection: questions
+// Document ID: questionId
+// Fields:
+//   - type: string (TPS, SAINTEK)
+//   - section: string
+//   - content: string
+//   - options: list
+//   - correctAnswer: integer
+//   - explanation: string
+//   - difficulty: string (easy, medium, hard)
+//   - topic: string
+//   - subtopic: string
+//
+// Collection: tryouts
+// Document ID: tryoutId
+// Fields:
+//   - title: string
+//   - duration: integer
+//   - questionIds: list
+//   - createdAt: timestamp
+//
+// Collection: results
+// Document ID: resultId
+// Fields:
+//   - userId: string
+//   - tryoutId: string
+//   - score: integer
+//   - sectionScores: map
+//   - timeTaken: integer
+//   - answers: map
+//   - completedAt: timestamp
+//
+// Collection: materials
+// Document ID: materialId
+// Fields:
+//   - title: string
+//   - content: string
+//   - videoUrl: string
+//   - topic: string
+//   - section: string
+//
+// ===============================================================
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.email == "fahrilas29124@gmail.com" ||
+        request.auth.token.email == "verda4garden@gmail.com" ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin')
+      );
+    }
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['uid', 'email']) &&
+             data.uid is string &&
+             data.email is string;
+    }
+
+    function isValidQuestion(data) {
+      return data.keys().hasAll(['type', 'section', 'content', 'options', 'correctAnswer']) &&
+             data.type in ['TPS', 'SAINTEK'] &&
+             data.options is list &&
+             data.correctAnswer is int;
+    }
+
+    function isValidResult(data) {
+      return data.keys().hasAll(['userId', 'tryoutId', 'score']) &&
+             data.userId == request.auth.uid;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isOwner(userId) && isValidUser(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    match /questions/{questionId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /tryouts/{tryoutId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    match /results/{resultId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isAuthenticated() && isValidResult(request.resource.data);
+      allow update, delete: if isAdmin();
+    }
+
+    match /materials/{materialId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+  }
+}

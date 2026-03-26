@@ -1,0 +1,89 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and progress data",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "targetFK": { "type": "string", "description": "Target Medical School (e.g., FK UI, FK UGM)" },
+        "xp": { "type": "integer" },
+        "level": { "type": "integer" },
+        "badges": { "type": "array", "items": { "type": "string" } },
+        "streak": { "type": "integer" },
+        "lastActive": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Question": {
+      "title": "Question",
+      "description": "UTBK or Science booster question",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["TPS", "SAINTEK"] },
+        "section": { "type": "string", "description": "PU, PBM, PK, Bio, Kim, Fis" },
+        "content": { "type": "string" },
+        "options": { "type": "array", "items": { "type": "string" } },
+        "correctAnswer": { "type": "integer" },
+        "explanation": { "type": "string" },
+        "difficulty": { "type": "string", "enum": ["easy", "medium", "hard"] },
+        "topic": { "type": "string" },
+        "subtopic": { "type": "string" }
+      },
+      "required": ["content", "options", "correctAnswer", "type", "section"]
+    },
+    "Tryout": {
+      "title": "Tryout",
+      "description": "A set of questions for simulation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "duration": { "type": "integer", "description": "Duration in minutes" },
+        "questionIds": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "duration", "questionIds"]
+    },
+    "Result": {
+      "title": "Result",
+      "description": "User performance in a tryout",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "tryoutId": { "type": "string" },
+        "score": { "type": "integer" },
+        "sectionScores": { "type": "object" },
+        "timeTaken": { "type": "integer" },
+        "answers": { "type": "object", "description": "Map of questionId to selectedOptionIndex" },
+        "completedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "tryoutId", "score"]
+    },
+    "Material": {
+      "title": "Material",
+      "description": "Educational content with video",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "topic": { "type": "string" },
+        "section": { "type": "string" }
+      },
+      "required": ["title", "content", "topic"]
+    }
+  },
+  "firestore": {
+    "users": { "schema": "User", "description": "User profiles" },
+    "questions": { "schema": "Question", "description": "Question bank" },
+    "tryouts": { "schema": "Tryout", "description": "Available tryouts" },
+    "results": { "schema": "Result", "description": "User results" },
+    "materials": { "schema": "Material", "description": "Learning materials" }
+  }
+}
