@@ -48,11 +48,11 @@ export default function Materials() {
   }, [filter, searchQuery]);
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8 pb-12 relative">
+    <div className="max-w-7xl mx-auto space-y-8 pb-12 relative transition-colors duration-300">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-serif font-bold text-[#1a1a1a]">Learning Center</h1>
-          <p className="text-gray-500 font-serif italic mt-1">Master the concepts, ace the UTBK.</p>
+          <h1 className="text-3xl font-serif font-bold text-[#1a1a1a] dark:text-white">Learning Center</h1>
+          <p className="text-gray-500 dark:text-gray-400 font-serif italic mt-1">Master the concepts, ace the UTBK.</p>
         </div>
 
         <div className="flex items-center gap-4">
@@ -63,16 +63,16 @@ export default function Materials() {
               placeholder="Search topics..." 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-white border border-gray-100 rounded-2xl pl-12 pr-6 py-3 text-sm focus:outline-none focus:ring-4 focus:ring-[#5A5A40]/10 focus:border-[#5A5A40] transition-all w-full md:w-64"
+              className="bg-white dark:bg-[#151619] border border-gray-100 dark:border-gray-800 rounded-2xl pl-12 pr-6 py-3 text-sm focus:outline-none focus:ring-4 focus:ring-[#5A5A40]/10 focus:border-[#5A5A40] transition-all w-full md:w-64 dark:text-white"
             />
           </div>
-          <div className="flex bg-white p-1 rounded-2xl border border-gray-100 shadow-sm">
+          <div className="flex bg-white dark:bg-[#151619] p-1 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm">
             {['all', 'TPS', 'SAINTEK'].map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
                 className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${
-                  filter === f ? 'bg-[#5A5A40] text-white shadow-md' : 'text-gray-400 hover:text-[#5A5A40]'
+                  filter === f ? 'bg-[#5A5A40] text-white shadow-md' : 'text-gray-400 dark:text-gray-500 hover:text-[#5A5A40] dark:hover:text-[#8B8B6B]'
                 }`}
               >
                 {f}
@@ -95,19 +95,19 @@ export default function Materials() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               onClick={() => setSelectedMaterial(material)}
-              className="bg-white rounded-[40px] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-[#5A5A40]/5 transition-all cursor-pointer group"
+              className="bg-white dark:bg-[#151619] rounded-[40px] p-8 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-xl hover:shadow-[#5A5A40]/5 transition-all cursor-pointer group"
             >
               <div className="flex items-center justify-between mb-6">
-                <div className="w-12 h-12 bg-[#F5F5F0] rounded-2xl flex items-center justify-center text-[#5A5A40] group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-[#F5F5F0] dark:bg-gray-800 rounded-2xl flex items-center justify-center text-[#5A5A40] dark:text-[#8B8B6B] group-hover:scale-110 transition-transform">
                   <BookOpen size={24} />
                 </div>
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{material.section}</span>
+                <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">{material.section}</span>
               </div>
-              <h3 className="text-xl font-serif font-bold text-[#1a1a1a] mb-2 group-hover:text-[#5A5A40] transition-colors">{material.title}</h3>
-              <p className="text-sm text-gray-500 line-clamp-2 mb-6 font-serif italic">{material.content}</p>
-              <div className="flex items-center justify-between pt-6 border-t border-gray-50">
-                <span className="text-xs font-bold text-[#5A5A40] uppercase tracking-widest">{material.topic}</span>
-                <div className="flex items-center gap-2 text-[#5A5A40] font-bold text-xs uppercase tracking-widest group-hover:translate-x-1 transition-transform">
+              <h3 className="text-xl font-serif font-bold text-[#1a1a1a] dark:text-white mb-2 group-hover:text-[#5A5A40] dark:group-hover:text-[#8B8B6B] transition-colors">{material.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mb-6 font-serif italic">{material.content}</p>
+              <div className="flex items-center justify-between pt-6 border-t border-gray-50 dark:border-gray-800">
+                <span className="text-xs font-bold text-[#5A5A40] dark:text-[#8B8B6B] uppercase tracking-widest">{material.topic}</span>
+                <div className="flex items-center gap-2 text-[#5A5A40] dark:text-[#8B8B6B] font-bold text-xs uppercase tracking-widest group-hover:translate-x-1 transition-transform">
                   Start Learning
                   <ChevronRight size={14} />
                 </div>
@@ -130,27 +130,27 @@ export default function Materials() {
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="bg-[#F5F5F0] w-full max-w-5xl h-full max-h-[90vh] rounded-[48px] overflow-hidden shadow-2xl flex flex-col"
+              className="bg-[#F5F5F0] dark:bg-[#0a0a0a] w-full max-w-5xl h-full max-h-[90vh] rounded-[48px] overflow-hidden shadow-2xl flex flex-col border border-gray-100 dark:border-gray-800"
             >
-              <div className="bg-white px-8 py-6 flex items-center justify-between border-b border-gray-100">
+              <div className="bg-white dark:bg-[#151619] px-8 py-6 flex items-center justify-between border-b border-gray-100 dark:border-gray-800">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-[#5A5A40] rounded-2xl flex items-center justify-center text-white">
                     <Stethoscope size={20} />
                   </div>
                   <div>
-                    <h2 className="font-serif font-bold text-xl">{selectedMaterial.title}</h2>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-widest">{selectedMaterial.section} • {selectedMaterial.topic}</p>
+                    <h2 className="font-serif font-bold text-xl dark:text-white">{selectedMaterial.title}</h2>
+                    <p className="text-[10px] text-gray-400 dark:text-gray-500 uppercase tracking-widest">{selectedMaterial.section} • {selectedMaterial.topic}</p>
                   </div>
                 </div>
                 <button 
                   onClick={() => setSelectedMaterial(null)}
-                  className="p-3 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-red-500"
+                  className="p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors text-gray-400 hover:text-red-500"
                 >
                   <X size={24} />
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-8 md:p-12 space-y-12">
+              <div className="flex-1 overflow-y-auto p-8 md:p-12 space-y-12 custom-scrollbar">
                 {/* Video Section */}
                 {selectedMaterial.videoUrl && (
                   <div className="aspect-video w-full bg-black rounded-[40px] overflow-hidden shadow-2xl relative group">
@@ -164,17 +164,17 @@ export default function Materials() {
                 )}
 
                 {/* Content Section */}
-                <div className="prose prose-lg prose-slate max-w-none">
-                  <div className="bg-white rounded-[40px] p-8 md:p-12 shadow-sm border border-gray-100">
+                <div className="prose prose-lg prose-slate dark:prose-invert max-w-none">
+                  <div className="bg-white dark:bg-[#151619] rounded-[40px] p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-800">
                     <ReactMarkdown>{selectedMaterial.content}</ReactMarkdown>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white px-8 py-6 border-t border-gray-100 flex items-center justify-between">
+              <div className="bg-white dark:bg-[#151619] px-8 py-6 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Zap size={18} className="text-orange-500" />
-                  <span className="text-sm font-bold text-gray-500">Need help? Ask our AI Tutor about this topic.</span>
+                  <span className="text-sm font-bold text-gray-500 dark:text-gray-400">Need help? Ask our AI Tutor about this topic.</span>
                 </div>
                 <button 
                   onClick={() => setShowTutor(true)}
@@ -209,7 +209,7 @@ export default function Materials() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 w-full md:w-[450px] h-full bg-white shadow-2xl z-[200] flex flex-col border-l border-gray-100"
+            className="fixed top-0 right-0 w-full md:w-[450px] h-full bg-white dark:bg-[#0a0a0a] shadow-2xl z-[200] flex flex-col border-l border-gray-100 dark:border-gray-800"
           >
             <div className="p-6 bg-[#5A5A40] text-white flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -261,8 +261,8 @@ function AITutorChat({ context }: { context?: string }) {
   };
 
   return (
-    <div className="flex-1 flex flex-col h-full overflow-hidden bg-[#F5F5F0]/30">
-      <div className="flex-1 overflow-y-auto p-6 space-y-6">
+    <div className="flex-1 flex flex-col h-full overflow-hidden bg-[#F5F5F0]/30 dark:bg-[#0a0a0a]/30">
+      <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
         {messages.map((msg, i) => (
           <motion.div
             key={i}
@@ -273,9 +273,9 @@ function AITutorChat({ context }: { context?: string }) {
             <div className={`max-w-[85%] p-4 rounded-3xl text-sm ${
               msg.role === 'user' 
                 ? 'bg-[#5A5A40] text-white rounded-tr-none' 
-                : 'bg-white text-[#1a1a1a] shadow-sm border border-gray-100 rounded-tl-none'
+                : 'bg-white dark:bg-[#151619] text-[#1a1a1a] dark:text-white shadow-sm border border-gray-100 dark:border-gray-800 rounded-tl-none'
             }`}>
-              <div className="prose prose-sm max-w-none prose-p:leading-relaxed">
+              <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed">
                 <ReactMarkdown>
                   {msg.text}
                 </ReactMarkdown>
@@ -285,15 +285,15 @@ function AITutorChat({ context }: { context?: string }) {
         ))}
         {isTyping && (
           <div className="flex justify-start">
-            <div className="bg-white p-4 rounded-3xl rounded-tl-none shadow-sm border border-gray-100 flex items-center gap-2">
+            <div className="bg-white dark:bg-[#151619] p-4 rounded-3xl rounded-tl-none shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-2">
               <Loader2 size={16} className="animate-spin text-[#5A5A40]" />
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">AI is thinking...</span>
+              <span className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">AI is thinking...</span>
             </div>
           </div>
         )}
       </div>
 
-      <div className="p-6 bg-white border-t border-gray-100">
+      <div className="p-6 bg-white dark:bg-[#151619] border-t border-gray-100 dark:border-gray-800">
         <div className="relative flex items-center gap-2">
           <input
             type="text"
@@ -301,7 +301,7 @@ function AITutorChat({ context }: { context?: string }) {
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSend()}
             placeholder="Ask a question..."
-            className="flex-1 bg-[#F5F5F0] border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-[#5A5A40]/20 transition-all"
+            className="flex-1 bg-[#F5F5F0] dark:bg-[#0a0a0a] border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-[#5A5A40]/20 transition-all dark:text-white"
           />
           <button 
             onClick={handleSend}

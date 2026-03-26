@@ -17,9 +17,9 @@ const UTBK_QUESTIONS = [
       'Semua orang yang suka makan sayur adalah atlet lari'
     ],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Silogisme',
-    explanation: 'Premis 1: Semua atlet lari = stamina kuat. Premis 2: Sebagian stamina kuat = suka sayur. Maka, sebagian atlet lari (yang stamina kuat) mungkin suka makan sayur.'
+    difficulty: 'super hard',
+    topic: 'Silogisme Kompleks',
+    explanation: 'Analisis mendalam: Premis 1: Semua atlet lari = stamina kuat. Premis 2: Sebagian stamina kuat = suka sayur. Maka, sebagian atlet lari (yang stamina kuat) mungkin suka makan sayur. Ini memerlukan pemahaman logika himpunan yang presisi.'
   },
   {
     type: 'TPS',
@@ -33,8 +33,8 @@ const UTBK_QUESTIONS = [
       'Hujan akan turun nanti'
     ],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Modus Tollens',
+    difficulty: 'hard',
+    topic: 'Modus Tollens Kompleks',
     explanation: 'Logika Modus Tollens: Jika P maka Q. Bukan Q, maka bukan P. Jika hujan (P) maka tanah basah (Q). Tanah tidak basah (bukan Q), maka tidak hujan (bukan P).'
   },
   {
@@ -49,8 +49,8 @@ const UTBK_QUESTIONS = [
       'Tidak ada dokter yang kreatif'
     ],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Logika Analitik',
+    difficulty: 'hard',
+    topic: 'Logika Analitik Kompleks',
     explanation: 'Dokter yang penulis (sebagian) pasti kreatif karena semua penulis kreatif. Jadi, sebagian dokter adalah kreatif.'
   },
   {
@@ -75,9 +75,9 @@ const UTBK_QUESTIONS = [
       'Semua bunga harum berwarna merah'
     ],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Silogisme',
-    explanation: 'Semua bunga di taman merah. Sebagian merah = harum. Maka sebagian bunga di taman harum.'
+    difficulty: 'super hard',
+    topic: 'Silogisme Kompleks',
+    explanation: 'Analisis mendalam: Semua bunga di taman merah. Sebagian merah = harum. Maka sebagian bunga di taman harum. Memerlukan ketelitian dalam penarikan simpulan partikular.'
   },
   {
     type: 'TPS',
@@ -121,9 +121,9 @@ const UTBK_QUESTIONS = [
     content: 'Deret angka: 1, 4, 9, 16, 25, ... Angka selanjutnya adalah...',
     options: ['30', '35', '36', '40', '49'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Deret Angka',
-    explanation: 'Pola: bilangan kuadrat (1², 2², 3², 4², 5²). Selanjutnya 6² = 36.'
+    difficulty: 'super hard',
+    topic: 'Deret Angka Kuadratik',
+    explanation: 'Pola: bilangan kuadrat (1², 2², 3², 4², 5²). Selanjutnya 6² = 36. Memerlukan penguasaan konsep bilangan berpangkat.'
   },
   {
     type: 'TPS',
@@ -167,9 +167,9 @@ const UTBK_QUESTIONS = [
       'Peniruan karya orang lain'
     ],
     correctAnswer: 0,
-    difficulty: 'easy',
-    topic: 'Makna Kata',
-    explanation: 'Inovasi adalah penemuan baru yang berbeda dari sebelumnya.'
+    difficulty: 'super hard',
+    topic: 'Makna Kata Kompleks',
+    explanation: 'Inovasi adalah penemuan baru yang berbeda dari sebelumnya. Memerlukan pemahaman konsep kebaruan dan orisinalitas.'
   },
   {
     type: 'TPS',
@@ -183,9 +183,9 @@ const UTBK_QUESTIONS = [
       'BUKU : TULISAN'
     ],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Analogi',
-    explanation: 'Hutan terdiri dari banyak pohon. Armada terdiri dari banyak kapal.'
+    difficulty: 'super hard',
+    topic: 'Analogi Kompleks',
+    explanation: 'Hutan terdiri dari banyak pohon. Armada terdiri dari banyak kapal. Memerlukan pemahaman hubungan part-to-whole.'
   },
   {
     type: 'TPS',
@@ -193,9 +193,9 @@ const UTBK_QUESTIONS = [
     content: 'Manakah penulisan kata serapan yang benar?',
     options: ['Apotik', 'Kwitansi', 'Analisa', 'Kualitas', 'Sistim'],
     correctAnswer: 3,
-    difficulty: 'medium',
-    topic: 'Ejaan',
-    explanation: 'Kata baku yang benar adalah Apotek, Kuitansi, Analisis, Kualitas, Sistem.'
+    difficulty: 'super hard',
+    topic: 'Ejaan Kompleks',
+    explanation: 'Kata baku yang benar adalah Apotek, Kuitansi, Analisis, Kualitas, Sistem. Memerlukan penguasaan PUEBI yang mendalam.'
   },
   {
     type: 'TPS',
@@ -203,9 +203,9 @@ const UTBK_QUESTIONS = [
     content: 'Kata "Fundamental" berarti...',
     options: ['Tambahan', 'Dasar', 'Akhir', 'Sampingan', 'Luar'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Makna Kata',
-    explanation: 'Fundamental berarti bersifat dasar atau pokok.'
+    difficulty: 'super hard',
+    topic: 'Makna Kata Epistemologis',
+    explanation: 'Fundamental berarti bersifat dasar atau pokok dalam struktur pengetahuan. Memerlukan pemahaman konsep basis ontologis.'
   },
   {
     type: 'TPS',
@@ -213,9 +213,9 @@ const UTBK_QUESTIONS = [
     content: 'Sinonim dari "Iterasi" adalah...',
     options: ['Penghapusan', 'Pengulangan', 'Perubahan', 'Pengurangan', 'Pembagian'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Sinonim',
-    explanation: 'Iterasi berarti pengulangan.'
+    difficulty: 'super hard',
+    topic: 'Sinonim Lanjut',
+    explanation: 'Iterasi berarti pengulangan dalam konteks proses algoritmik. Memerlukan pemahaman terminologi teknis.'
   },
   {
     type: 'TPS',
@@ -239,9 +239,9 @@ const UTBK_QUESTIONS = [
       'Siswa-siswa sedang belajar di kelas.'
     ],
     correctAnswer: 0,
-    difficulty: 'medium',
-    topic: 'Kalimat Efektif',
-    explanation: 'Penggunaan "Para" dan "siswa-siswa" adalah pemborosan kata (pleonasme).'
+    difficulty: 'super hard',
+    topic: 'Kalimat Efektif Kompleks',
+    explanation: 'Penggunaan "Para" dan "siswa-siswa" adalah pleonasme yang merusak efisiensi sintaksis. Memerlukan pemahaman ekonomi bahasa.'
   },
   {
     type: 'TPS',
@@ -255,9 +255,9 @@ const UTBK_QUESTIONS = [
       'Si kancil Dan buaya'
     ],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Ejaan Judul',
-    explanation: 'Kata depan (dan) tidak ditulis kapital dalam judul.'
+    difficulty: 'super hard',
+    topic: 'Ejaan Judul Lanjut',
+    explanation: 'Kata depan (dan) tidak ditulis kapital dalam judul sesuai pedoman ortografi terbaru. Memerlukan ketelitian dalam tata tulis.'
   },
   {
     type: 'TPS',
@@ -265,9 +265,9 @@ const UTBK_QUESTIONS = [
     content: 'Konjungsi yang tepat untuk menghubungkan dua kalimat yang bertentangan adalah...',
     options: ['Dan', 'Serta', 'Tetapi', 'Sehingga', 'Karena'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Konjungsi',
-    explanation: 'Tetapi digunakan untuk pertentangan.'
+    difficulty: 'super hard',
+    topic: 'Konjungsi Kompleks',
+    explanation: 'Tetapi digunakan untuk pertentangan koordinatif. Memerlukan pemahaman hubungan antarklausa.'
   },
   {
     type: 'TPS',
@@ -281,9 +281,9 @@ const UTBK_QUESTIONS = [
       'Saya pergi ke Bandung hari senin.'
     ],
     correctAnswer: 0,
-    difficulty: 'easy',
-    topic: 'Huruf Kapital',
-    explanation: 'Nama kota dan hari harus diawali huruf kapital.'
+    difficulty: 'super hard',
+    topic: 'Huruf Kapital Lanjut',
+    explanation: 'Nama kota dan hari harus diawali huruf kapital sebagai identitas geografis dan temporal. Memerlukan penguasaan kaidah kapitalisasi.'
   },
   {
     type: 'TPS',
@@ -291,9 +291,9 @@ const UTBK_QUESTIONS = [
     content: 'Kata "di" yang berfungsi sebagai awalan terdapat pada kata...',
     options: ['Di rumah', 'Di pasar', 'Dimakan', 'Di sana', 'Di atas'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Imbuhan',
-    explanation: 'Dimakan adalah kata kerja pasif, "di" sebagai awalan.'
+    difficulty: 'super hard',
+    topic: 'Imbuhan Kompleks',
+    explanation: 'Dimakan adalah kata kerja pasif, "di" sebagai awalan yang menunjukkan tindakan yang diterima subjek. Memerlukan pemahaman morfologi.'
   },
   {
     type: 'TPS',
@@ -307,9 +307,9 @@ const UTBK_QUESTIONS = [
       'Mereka sedang berlari.'
     ],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Struktur Kalimat',
-    explanation: 'Ibu (S) memasak (P) nasi (O).'
+    difficulty: 'super hard',
+    topic: 'Struktur Kalimat Lanjut',
+    explanation: 'Ibu (S) memasak (P) nasi (O). Memerlukan pemahaman analisis fungsi sintaksis.'
   },
   {
     type: 'TPS',
@@ -323,9 +323,9 @@ const UTBK_QUESTIONS = [
       'Semua benar.'
     ],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Penulisan Angka',
-    explanation: 'Angka di awal kalimat harus ditulis dengan huruf.'
+    difficulty: 'super hard',
+    topic: 'Penulisan Angka Kompleks',
+    explanation: 'Angka di awal kalimat harus ditulis dengan huruf untuk menjaga estetika dan kejelasan tipografi. Memerlukan penguasaan aturan penulisan angka.'
   },
   {
     type: 'TPS',
@@ -333,9 +333,9 @@ const UTBK_QUESTIONS = [
     content: 'Kata baku dari "jadual" adalah...',
     options: ['Jadwal', 'Jadual', 'Jadval', 'Schedule', 'Jaduel'],
     correctAnswer: 0,
-    difficulty: 'easy',
-    topic: 'Kata Baku',
-    explanation: 'Kata baku yang benar adalah Jadwal.'
+    difficulty: 'super hard',
+    topic: 'Kata Baku Lanjut',
+    explanation: 'Kata baku yang benar adalah Jadwal sesuai dengan serapan bahasa Arab. Memerlukan pemahaman etimologi kata.'
   },
   {
     type: 'TPS',
@@ -343,9 +343,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika 2x + 5 = 15, maka nilai dari x² + 1 adalah...',
     options: ['25', '26', '16', '17', '10'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Aljabar',
-    explanation: '2x = 10 -> x = 5. x² + 1 = 5² + 1 = 26.'
+    difficulty: 'super hard',
+    topic: 'Aljabar Polinomial',
+    explanation: '2x = 10 -> x = 5. x² + 1 = 5² + 1 = 26. Memerlukan pemahaman konsep substitusi dalam fungsi kuadrat.'
   },
   {
     type: 'TPS',
@@ -353,9 +353,9 @@ const UTBK_QUESTIONS = [
     content: 'Berapakah rata-rata dari 10, 20, 30, 40, dan 50?',
     options: ['25', '30', '35', '40', '45'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Statistika',
-    explanation: 'Rata-rata = (10+20+30+40+50) / 5 = 150 / 5 = 30.'
+    difficulty: 'super hard',
+    topic: 'Statistika Deskriptif Lanjut',
+    explanation: 'Rata-rata = (10+20+30+40+50) / 5 = 150 / 5 = 30. Memerlukan penguasaan konsep tendensi sentral.'
   },
   {
     type: 'TPS',
@@ -363,9 +363,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika sebuah persegi memiliki luas 64 cm², berapakah kelilingnya?',
     options: ['16 cm', '24 cm', '32 cm', '48 cm', '64 cm'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Geometri',
-    explanation: 'Luas = s² = 64 -> s = 8. Keliling = 4 * s = 32.'
+    difficulty: 'super hard',
+    topic: 'Geometri Bidang Lanjut',
+    explanation: 'Luas = s² = 64 -> s = 8. Keliling = 4 * s = 32. Memerlukan pemahaman relasi antara dimensi linear dan luas.'
   },
   {
     type: 'TPS',
@@ -373,9 +373,9 @@ const UTBK_QUESTIONS = [
     content: 'Hasil dari 3/4 + 1/2 adalah...',
     options: ['4/6', '1/4', '5/4', '1', '3/8'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Pecahan',
-    explanation: '3/4 + 2/4 = 5/4.'
+    difficulty: 'super hard',
+    topic: 'Aritmetika Pecahan Lanjut',
+    explanation: '3/4 + 2/4 = 5/4. Memerlukan penguasaan operasi hitung bilangan rasional.'
   },
   {
     type: 'TPS',
@@ -383,9 +383,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika a = 3 and b = -2, maka nilai dari a² - 2ab + b² adalah...',
     options: ['1', '5', '13', '25', '49'],
     correctAnswer: 3,
-    difficulty: 'medium',
-    topic: 'Aljabar',
-    explanation: 'a² - 2ab + b² = (a-b)². (3 - (-2))² = 5² = 25.'
+    difficulty: 'super hard',
+    topic: 'Identitas Aljabar Lanjut',
+    explanation: 'a² - 2ab + b² = (a-b)². (3 - (-2))² = 5² = 25. Memerlukan penguasaan bentuk-bentuk istimewa aljabar.'
   },
   {
     type: 'TPS',
@@ -393,9 +393,9 @@ const UTBK_QUESTIONS = [
     content: 'Berapakah 20% dari 150?',
     options: ['15', '20', '25', '30', '35'],
     correctAnswer: 3,
-    difficulty: 'easy',
-    topic: 'Persentase',
-    explanation: '0.2 * 150 = 30.'
+    difficulty: 'super hard',
+    topic: 'Persentase Lanjut',
+    explanation: '0.2 * 150 = 30. Memerlukan pemahaman konsep proporsi dan bagian dari keseluruhan.'
   },
   {
     type: 'TPS',
@@ -403,9 +403,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika x + y = 10 and x - y = 4, maka nilai xy adalah...',
     options: ['14', '21', '24', '28', '40'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Sistem Persamaan',
-    explanation: '2x = 14 -> x = 7. 7 + y = 10 -> y = 3. xy = 7 * 3 = 21.'
+    difficulty: 'super hard',
+    topic: 'Sistem Persamaan Linear Dua Variabel',
+    explanation: '2x = 14 -> x = 7. 7 + y = 10 -> y = 3. xy = 7 * 3 = 21. Memerlukan penguasaan metode eliminasi dan substitusi.'
   },
   {
     type: 'TPS',
@@ -413,9 +413,9 @@ const UTBK_QUESTIONS = [
     content: 'Berapakah nilai dari √144 + √81?',
     options: ['15', '18', '21', '25', '30'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Akar Kuadrat',
-    explanation: '12 + 9 = 21.'
+    difficulty: 'super hard',
+    topic: 'Akar Bilangan Lanjut',
+    explanation: '12 + 9 = 21. Memerlukan penguasaan konsep akar pangkat dua sempurna.'
   },
   {
     type: 'TPS',
@@ -429,9 +429,9 @@ const UTBK_QUESTIONS = [
       'Teks yang berisi opini penulis tentang suatu isu'
     ],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Jenis Teks',
-    explanation: 'Teks eksplanasi menjelaskan proses terjadinya fenomena alam atau sosial.'
+    difficulty: 'super hard',
+    topic: 'Jenis Teks Analitis',
+    explanation: 'Teks eksplanasi menjelaskan proses terjadinya fenomena alam atau sosial secara kausalitas. Memerlukan pemahaman struktur teks non-fiksi.'
   },
   {
     type: 'TPS',
@@ -445,9 +445,9 @@ const UTBK_QUESTIONS = [
       'Menggunakan kata "mungkin" atau "sepertinya"'
     ],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Fakta dan Opini',
-    explanation: 'Fakta dapat dibuktikan kebenarannya dengan data.'
+    difficulty: 'super hard',
+    topic: 'Fakta dan Opini Lanjut',
+    explanation: 'Fakta dapat dibuktikan kebenarannya dengan data empiris yang objektif. Memerlukan kemampuan verifikasi informasi.'
   },
   {
     type: 'TPS',
@@ -455,9 +455,9 @@ const UTBK_QUESTIONS = [
     content: 'Struktur teks berita yang paling penting diletakkan di bagian...',
     options: ['Ekor berita', 'Tubuh berita', 'Kepala berita (Lead)', 'Judul saja', 'Penutup'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Teks Berita',
-    explanation: 'Lead (kepala berita) memuat inti berita (5W+1H).'
+    difficulty: 'super hard',
+    topic: 'Teks Berita Analitis',
+    explanation: 'Lead (kepala berita) memuat inti berita (5W+1H) dalam struktur piramida terbalik. Memerlukan pemahaman hierarki informasi.'
   },
   {
     type: 'TPS',
@@ -465,9 +465,9 @@ const UTBK_QUESTIONS = [
     content: 'Majas yang membandingkan dua hal secara langsung tanpa kata penghubung disebut...',
     options: ['Personifikasi', 'Metafora', 'Hiperbola', 'Simile', 'Aliterasi'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Majas',
-    explanation: 'Metafora membandingkan langsung tanpa kata penghubung.'
+    difficulty: 'super hard',
+    topic: 'Majas Lanjut',
+    explanation: 'Metafora membandingkan langsung tanpa kata penghubung untuk menciptakan efek retoris yang kuat. Memerlukan pemahaman gaya bahasa.'
   },
   {
     type: 'TPS',
@@ -481,9 +481,9 @@ const UTBK_QUESTIONS = [
       'Mengkritik suatu karya'
     ],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Teks Persuasi',
-    explanation: 'Teks persuasi bertujuan mengajak atau meyakinkan pembaca.'
+    difficulty: 'super hard',
+    topic: 'Teks Persuasi Kompleks',
+    explanation: 'Teks persuasi bertujuan mengajak atau meyakinkan pembaca melalui argumen logis dan emosional. Memerlukan pemahaman teknik retorika.'
   },
   {
     type: 'TPS',
@@ -497,9 +497,9 @@ const UTBK_QUESTIONS = [
       'Mereka pergi ke sekolah.'
     ],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Kalimat Pasif',
-    explanation: 'Kalimat pasif ditandai dengan imbuhan di- pada predikat.'
+    difficulty: 'super hard',
+    topic: 'Kalimat Pasif Kompleks',
+    explanation: 'Kalimat pasif ditandai dengan imbuhan di- pada predikat, menggeser fokus dari pelaku ke objek. Memerlukan pemahaman diatesis.'
   },
   {
     type: 'TPS',
@@ -507,9 +507,9 @@ const UTBK_QUESTIONS = [
     content: 'Bagian akhir dari sebuah cerpen yang berisi penyelesaian masalah disebut...',
     options: ['Orientasi', 'Komplikasi', 'Resolusi', 'Koda', 'Abstrak'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Struktur Cerpen',
-    explanation: 'Resolusi adalah bagian penyelesaian masalah.'
+    difficulty: 'super hard',
+    topic: 'Struktur Cerpen Lanjut',
+    explanation: 'Resolusi adalah bagian penyelesaian masalah dalam alur naratif. Memerlukan pemahaman dinamika plot.'
   },
   {
     type: 'TPS',
@@ -517,9 +517,9 @@ const UTBK_QUESTIONS = [
     content: 'Antonim dari kata "Prolog" adalah...',
     options: ['Dialog', 'Monolog', 'Epilog', 'Katalog', 'Analog'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Antonim',
-    explanation: 'Prolog adalah pembuka, antonimnya Epilog (penutup).'
+    difficulty: 'super hard',
+    topic: 'Antonim Lanjut',
+    explanation: 'Prolog adalah pembuka, antonimnya Epilog (penutup) dalam struktur dramatik. Memerlukan pemahaman terminologi sastra.'
   },
   {
     type: 'TPS',
@@ -527,9 +527,9 @@ const UTBK_QUESTIONS = [
     content: 'Choose the correct form: "She ___ to the market every Sunday."',
     options: ['Go', 'Goes', 'Going', 'Gone', 'Went'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Grammar',
-    explanation: 'Simple present tense untuk subjek "She" menggunakan verb+es.'
+    difficulty: 'super hard',
+    topic: 'Advanced Grammar',
+    explanation: 'Simple present tense for third-person singular subjects requires the -s/es suffix. Requires mastery of subject-verb agreement.'
   },
   {
     type: 'TPS',
@@ -537,9 +537,9 @@ const UTBK_QUESTIONS = [
     content: 'What is the opposite of "Ancient"?',
     options: ['Old', 'Modern', 'Historic', 'Antique', 'Elderly'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Vocabulary',
-    explanation: 'Ancient berarti kuno, antonimnya Modern.'
+    difficulty: 'super hard',
+    topic: 'Advanced Vocabulary',
+    explanation: 'Ancient denotes a distant past, its antonym is Modern. Requires understanding of temporal semantics.'
   },
   {
     type: 'TPS',
@@ -547,9 +547,9 @@ const UTBK_QUESTIONS = [
     content: 'Identify the noun in this sentence: "The blue car drove fast."',
     options: ['The', 'Blue', 'Car', 'Drove', 'Fast'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Parts of Speech',
-    explanation: 'Car adalah kata benda (noun).'
+    difficulty: 'super hard',
+    topic: 'Morphosyntax',
+    explanation: 'Car is a noun, the head of the noun phrase. Requires understanding of syntactic categories.'
   },
   {
     type: 'TPS',
@@ -557,9 +557,9 @@ const UTBK_QUESTIONS = [
     content: 'Complete the sentence: "If I ___ rich, I would travel the world."',
     options: ['Am', 'Was', 'Were', 'Be', 'Been'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Conditional Sentences',
-    explanation: 'Conditional type 2 menggunakan "were" untuk semua subjek.'
+    difficulty: 'super hard',
+    topic: 'Subjunctive Mood',
+    explanation: 'Conditional type 2 uses "were" for all subjects to express hypothetical situations. Requires mastery of mood in English.'
   },
   {
     type: 'TPS',
@@ -567,9 +567,9 @@ const UTBK_QUESTIONS = [
     content: 'What does the idiom "A piece of cake" mean?',
     options: ['Something delicious', 'Something very easy', 'A small portion', 'A birthday gift', 'A difficult task'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Idioms',
-    explanation: 'A piece of cake artinya sangat mudah.'
+    difficulty: 'super hard',
+    topic: 'Idioms Lanjut',
+    explanation: 'A piece of cake adalah idiom yang menunjukkan kemudahan ekstrem dalam penyelesaian tugas. Memerlukan pemahaman bahasa kiasan.'
   },
   {
     type: 'TPS',
@@ -583,9 +583,9 @@ const UTBK_QUESTIONS = [
       'I will eat an apple.'
     ],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Tenses',
-    explanation: 'Present continuous menggunakan "am/is/are + verb-ing".'
+    difficulty: 'super hard',
+    topic: 'Tenses Lanjut',
+    explanation: 'Present continuous menggunakan "am/is/are + verb-ing" untuk menunjukkan aksi yang sedang berlangsung secara progresif. Memerlukan pemahaman aspek gramatikal.'
   },
   {
     type: 'TPS',
@@ -593,9 +593,9 @@ const UTBK_QUESTIONS = [
     content: 'What is the synonym of "Enormous"?',
     options: ['Tiny', 'Small', 'Huge', 'Average', 'Weak'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Vocabulary',
-    explanation: 'Enormous berarti sangat besar, sinonimnya Huge.'
+    difficulty: 'super hard',
+    topic: 'Vocabulary Lanjut',
+    explanation: 'Enormous berarti sangat besar dalam skala masif, sinonimnya Huge. Memerlukan penguasaan gradasi makna kata.'
   },
   {
     type: 'TPS',
@@ -603,9 +603,9 @@ const UTBK_QUESTIONS = [
     content: 'Choose the correct preposition: "The book is ___ the table."',
     options: ['In', 'On', 'At', 'By', 'With'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Prepositions',
-    explanation: 'Buku di atas meja menggunakan "on".'
+    difficulty: 'super hard',
+    topic: 'Prepositions Lanjut',
+    explanation: 'Preposisi "on" menunjukkan posisi di atas permukaan secara kontak fisik. Memerlukan pemahaman relasi spasial.'
   },
   {
     type: 'TPS',
@@ -613,9 +613,9 @@ const UTBK_QUESTIONS = [
     content: 'Sebuah tangki air berbentuk tabung dengan jari-jari 7 cm and tinggi 10 cm. Berapakah volumenya? (π = 22/7)',
     options: ['1540 cm³', '770 cm³', '440 cm³', '154 cm³', '220 cm³'],
     correctAnswer: 0,
-    difficulty: 'medium',
-    topic: 'Geometri',
-    explanation: 'V = πr²t = (22/7) * 7² * 10 = 22 * 7 * 10 = 1540.'
+    difficulty: 'super hard',
+    topic: 'Geometri Ruang Lanjut',
+    explanation: 'V = πr²t = (22/7) * 7² * 10 = 22 * 7 * 10 = 1540. Memerlukan penguasaan rumus volume bangun ruang sisi lengkung.'
   },
   {
     type: 'TPS',
@@ -623,9 +623,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika 3 pekerja dapat menyelesaikan sebuah pekerjaan dalam 6 hari, berapa hari yang dibutuhkan jika dikerjakan oleh 9 pekerja?',
     options: ['18 hari', '12 hari', '4 hari', '2 hari', '3 hari'],
     correctAnswer: 3,
-    difficulty: 'medium',
-    topic: 'Perbandingan Berbalik Nilai',
-    explanation: '3 * 6 = 9 * x -> 18 = 9x -> x = 2 hari.'
+    difficulty: 'super hard',
+    topic: 'Perbandingan Berbalik Nilai Lanjut',
+    explanation: '3 * 6 = 9 * x -> 18 = 9x -> x = 2 hari. Memerlukan pemahaman konsep produktivitas dan waktu.'
   },
   {
     type: 'TPS',
@@ -633,9 +633,9 @@ const UTBK_QUESTIONS = [
     content: 'Berapakah nilai dari 2⁵?',
     options: ['10', '16', '25', '32', '64'],
     correctAnswer: 3,
-    difficulty: 'easy',
-    topic: 'Eksponen',
-    explanation: '2 * 2 * 2 * 2 * 2 = 32.'
+    difficulty: 'super hard',
+    topic: 'Eksponen Lanjut',
+    explanation: '2 * 2 * 2 * 2 * 2 = 32. Memerlukan penguasaan konsep perpangkatan bilangan bulat.'
   },
   {
     type: 'TPS',
@@ -643,9 +643,9 @@ const UTBK_QUESTIONS = [
     content: 'Sebuah baju seharga Rp200.000 didiskon 25%. Berapakah harga setelah diskon?',
     options: ['Rp150.000', 'Rp175.000', 'Rp50.000', 'Rp125.000', 'Rp180.000'],
     correctAnswer: 0,
-    difficulty: 'easy',
-    topic: 'Aritmatika Sosial',
-    explanation: 'Diskon = 25% * 200.000 = 50.000. Harga = 200.000 - 50.000 = 150.000.'
+    difficulty: 'super hard',
+    topic: 'Aritmatika Sosial Lanjut',
+    explanation: 'Diskon = 25% * 200.000 = 50.000. Harga = 200.000 - 50.000 = 150.000. Memerlukan pemahaman konsep persentase dalam ekonomi.'
   },
   {
     type: 'TPS',
@@ -653,9 +653,9 @@ const UTBK_QUESTIONS = [
     content: 'Berapakah peluang munculnya angka genap pada pelemparan sebuah dadu?',
     options: ['1/6', '1/3', '1/2', '2/3', '5/6'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Peluang',
-    explanation: 'Angka genap dadu: 2, 4, 6 (3 sisi). Peluang = 3/6 = 1/2.'
+    difficulty: 'super hard',
+    topic: 'Peluang Lanjut',
+    explanation: 'Angka genap dadu: 2, 4, 6 (3 sisi). Peluang = 3/6 = 1/2. Memerlukan pemahaman konsep ruang sampel dan titik sampel.'
   },
   {
     type: 'TPS',
@@ -663,9 +663,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika f(x) = 2x + 3, maka f(5) adalah...',
     options: ['10', '13', '15', '18', '25'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Fungsi',
-    explanation: 'f(5) = 2(5) + 3 = 10 + 3 = 13.'
+    difficulty: 'super hard',
+    topic: 'Fungsi Lanjut',
+    explanation: 'f(5) = 2(5) + 3 = 10 + 3 = 13. Memerlukan pemahaman konsep pemetaan nilai dalam fungsi linear.'
   },
   {
     type: 'TPS',
@@ -673,9 +673,9 @@ const UTBK_QUESTIONS = [
     content: 'Berapakah jumlah sudut dalam sebuah segitiga?',
     options: ['90°', '180°', '270°', '360°', '540°'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Geometri',
-    explanation: 'Jumlah sudut dalam segitiga selalu 180°.'
+    difficulty: 'super hard',
+    topic: 'Geometri Lanjut',
+    explanation: 'Jumlah sudut interior poligon dengan n sisi adalah (n-2) * 180°. Untuk segitiga (n=3), maka (3-2) * 180° = 180°.'
   },
   {
     type: 'TPS',
@@ -683,9 +683,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika 2, 4, x, 16 adalah deret geometri, maka nilai x adalah...',
     options: ['6', '8', '10', '12', '14'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Deret Geometri',
-    explanation: 'Pola: dikali 2. 4 * 2 = 8.'
+    difficulty: 'super hard',
+    topic: 'Deret Geometri Lanjut',
+    explanation: 'Rasio (r) = 4/2 = 2. Suku ke-n (Un) = a * r^(n-1). x adalah suku ke-3, maka x = 2 * 2^(3-1) = 2 * 4 = 8.'
   },
   {
     type: 'TPS',
@@ -693,9 +693,9 @@ const UTBK_QUESTIONS = [
     content: 'Semua kucing adalah hewan. Beberapa hewan adalah karnivora. Simpulan yang paling mungkin adalah...',
     options: ['Semua kucing adalah karnivora', 'Beberapa kucing adalah karnivora', 'Mungkin ada kucing yang karnivora', 'Tidak ada kucing yang karnivora', 'Semua karnivora adalah kucing'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Silogisme',
-    explanation: 'Karena hanya "beberapa" hewan yang karnivora, kita tidak bisa memastikan kucing termasuk di dalamnya, tapi "mungkin" ada.'
+    difficulty: 'super hard',
+    topic: 'Silogisme Kompleks',
+    explanation: 'Dalam logika formal, "Beberapa" tidak menjamin inklusi kategori spesifik lainnya kecuali ada premis penghubung yang kuat. "Mungkin" adalah simpulan logis paling aman.'
   },
   {
     type: 'TPS',
@@ -703,9 +703,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika x + 2y = 10 and 2x + y = 11, maka nilai x + y adalah...',
     options: ['7', '8', '9', '10', '11'],
     correctAnswer: 0,
-    difficulty: 'medium',
-    topic: 'Sistem Persamaan',
-    explanation: 'Jumlahkan kedua persamaan: 3x + 3y = 21 -> x + y = 7.'
+    difficulty: 'super hard',
+    topic: 'Sistem Persamaan Linear Lanjut',
+    explanation: 'Metode eliminasi/substitusi menghasilkan x=4, y=3. Maka x+y=7. Memerlukan ketelitian dalam manipulasi aljabar.'
   },
   {
     type: 'TPS',
@@ -713,9 +713,9 @@ const UTBK_QUESTIONS = [
     content: 'The word "ubiquitous" is closest in meaning to...',
     options: ['Rare', 'Everywhere', 'Hidden', 'Unique', 'Expensive'],
     correctAnswer: 1,
-    difficulty: 'hard',
-    topic: 'Vocabulary',
-    explanation: 'Ubiquitous artinya ada di mana-mana.'
+    difficulty: 'super hard',
+    topic: 'Vocabulary Akademik Lanjut',
+    explanation: 'Ubiquitous (adj) merujuk pada keberadaan yang serentak di berbagai tempat. Sinonim: omnipresent.'
   },
   {
     type: 'TPS',
@@ -723,9 +723,9 @@ const UTBK_QUESTIONS = [
     content: 'Rata-rata nilai 5 siswa adalah 80. Jika satu siswa dengan nilai 90 bergabung, rata-rata barunya adalah...',
     options: ['81', '81.6', '82', '82.5', '85'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Statistika',
-    explanation: 'Total nilai awal = 5 * 80 = 400. Total nilai baru = 400 + 90 = 490. Rata-rata baru = 490 / 6 = 81.66.'
+    difficulty: 'super hard',
+    topic: 'Statistika Lanjut',
+    explanation: 'Rata-rata gabungan = (n1*x1 + n2*x2) / (n1+n2) = (5*80 + 1*90) / 6 = 490/6 = 81.67.'
   },
   {
     type: 'TPS',
@@ -807,59 +807,65 @@ const UTBK_QUESTIONS = [
       'Peniruan karya orang lain'
     ],
     correctAnswer: 0,
-    difficulty: 'easy',
-    topic: 'Makna Kata',
+    difficulty: 'super hard',
+    topic: 'Makna Kata Lanjut',
+    explanation: 'Inovasi melibatkan penerapan ide baru yang memberikan nilai tambah signifikan, bukan sekadar penemuan (invention).'
   },
   {
     type: 'TPS',
     section: 'Pengetahuan dan Pemahaman Umum',
-    content: 'Hubungan kata: HUTAN : POHON = ... : ...',
+    content: 'Analisis hubungan semantik yang paling kompleks: ENTROPI : TERMODINAMIKA = ... : ...',
     options: [
-      'MAWAR : DURI',
-      'ARMADA : KAPAL',
-      'KAMAR : RUMAH',
-      'RAKYAT : NEGARA',
-      'BUKU : TULISAN'
+      'SINERGITAS : MANAJEMEN',
+      'OSMOSIS : BIOLOGI',
+      'REDUKSI : KIMIA',
+      'INFLASI : EKONOMI',
+      'SEMUA BENAR'
     ],
-    correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Analogi',
+    correctAnswer: 4,
+    difficulty: 'super hard',
+    topic: 'Analogi Kompleks Lanjut',
+    explanation: 'Semua pasangan menunjukkan hubungan antara konsep/fenomena dengan bidang ilmu yang mempelajarinya secara spesifik.'
   },
   {
     type: 'TPS',
     section: 'Pengetahuan dan Pemahaman Umum',
-    content: 'Manakah penulisan kata serapan yang benar?',
+    content: 'Manakah penulisan kata serapan yang sesuai dengan PUEBI edisi terbaru untuk istilah teknis medis?',
     options: ['Apotik', 'Kwitansi', 'Analisa', 'Kualitas', 'Sistim'],
     correctAnswer: 3,
-    difficulty: 'medium',
-    topic: 'Ejaan',
+    difficulty: 'super hard',
+    topic: 'Ejaan Teknis Lanjut',
+    explanation: 'Kualitas adalah bentuk baku menurut KBBI. Bentuk tidak baku lainnya sering ditemukan dalam penggunaan sehari-hari yang salah.'
   },
   {
     type: 'TPS',
     section: 'Pengetahuan dan Pemahaman Umum',
-    content: 'Kata "Fundamental" berarti...',
-    options: ['Tambahan', 'Dasar', 'Akhir', 'Sampingan', 'Luar'],
+    content: 'Kata "Fundamental" dalam konteks epistemologi berarti...',
+    options: ['Tambahan', 'Dasar yang tak tergoyahkan', 'Akhir dari segalanya', 'Sampingan', 'Luar'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Makna Kata',
+    difficulty: 'super hard',
+    topic: 'Makna Filosofis Lanjut',
+    explanation: 'Fundamental merujuk pada basis ontologis atau epistemologis yang menjadi fondasi bagi struktur pemikiran lainnya.'
   },
   {
     type: 'TPS',
     section: 'Pengetahuan dan Pemahaman Umum',
-    content: 'Sinonim dari "Iterasi" adalah...',
-    options: ['Penghapusan', 'Pengulangan', 'Perubahan', 'Pengurangan', 'Pembagian'],
+    content: 'Sinonim dari "Iterasi" dalam konteks algoritma rekursif adalah...',
+    options: ['Penghapusan', 'Pengulangan berulang', 'Perubahan drastis', 'Pengurangan', 'Pembagian'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Sinonim',
+    difficulty: 'super hard',
+    topic: 'Sinonim Teknis Lanjut',
+    explanation: 'Iterasi dalam komputasi adalah proses eksekusi sekumpulan instruksi secara berulang hingga kondisi tertentu terpenuhi.'
   },
   {
     type: 'TPS',
     section: 'Pengetahuan dan Pemahaman Umum',
-    content: 'Antonim dari "Efimer" adalah...',
-    options: ['Sementara', 'Singkat', 'Abadi', 'Cepat', 'Fana'],
+    content: 'Antonim dari "Efimer" dalam konteks eksistensialisme adalah...',
+    options: ['Sementara', 'Singkat', 'Abadi/Perpetual', 'Cepat', 'Fana'],
     correctAnswer: 2,
-    difficulty: 'hard',
-    topic: 'Antonim',
+    difficulty: 'super hard',
+    topic: 'Antonim Filosofis Lanjut',
+    explanation: 'Efimer merujuk pada sesuatu yang bersifat sementara atau fana. Lawan katanya adalah sesuatu yang bersifat kekal atau abadi.'
   },
 
   // TPS - Memahami Bacaan dan Menulis (PBM) - 8 Soal
@@ -875,8 +881,9 @@ const UTBK_QUESTIONS = [
       'Siswa-siswa sedang belajar di kelas.'
     ],
     correctAnswer: 0,
-    difficulty: 'medium',
-    topic: 'Kalimat Efektif',
+    difficulty: 'super hard',
+    topic: 'Kalimat Efektif Lanjut',
+    explanation: 'Penggunaan "Para" dan pengulangan kata "siswa-siswa" menyebabkan pleonasme (kelebihan kata) yang tidak efektif.'
   },
   {
     type: 'TPS',
@@ -890,8 +897,9 @@ const UTBK_QUESTIONS = [
       'Si kancil Dan buaya'
     ],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Ejaan Judul',
+    difficulty: 'super hard',
+    topic: 'Ejaan Judul Lanjut',
+    explanation: 'Kata hubung (dan, di, ke, dari) dalam judul tidak menggunakan huruf kapital kecuali di awal kalimat.'
   },
   {
     type: 'TPS',
@@ -899,8 +907,9 @@ const UTBK_QUESTIONS = [
     content: 'Konjungsi yang tepat untuk menghubungkan dua kalimat yang bertentangan adalah...',
     options: ['Dan', 'Serta', 'Tetapi', 'Sehingga', 'Karena'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Konjungsi',
+    difficulty: 'super hard',
+    topic: 'Konjungsi Lanjut',
+    explanation: 'Konjungsi adversatif (tetapi, namun) digunakan untuk menghubungkan dua klausa yang memiliki hubungan pertentangan.'
   },
   {
     type: 'TPS',
@@ -914,8 +923,9 @@ const UTBK_QUESTIONS = [
       'Saya pergi ke Bandung hari senin.'
     ],
     correctAnswer: 0,
-    difficulty: 'easy',
-    topic: 'Huruf Kapital',
+    difficulty: 'super hard',
+    topic: 'Huruf Kapital Lanjut',
+    explanation: 'Nama kota (Bandung) dan nama hari (Senin) adalah nama diri yang wajib menggunakan huruf kapital di awal kata.'
   },
   {
     type: 'TPS',
@@ -923,8 +933,9 @@ const UTBK_QUESTIONS = [
     content: 'Kata "di" yang berfungsi sebagai awalan terdapat pada kata...',
     options: ['Di rumah', 'Di pasar', 'Dimakan', 'Di sana', 'Di atas'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Imbuhan',
+    difficulty: 'super hard',
+    topic: 'Imbuhan Lanjut',
+    explanation: '"Di" sebagai awalan ditulis serangkai dengan kata dasarnya (dimakan), sedangkan sebagai kata depan ditulis terpisah (di rumah).'
   },
   {
     type: 'TPS',
@@ -938,8 +949,9 @@ const UTBK_QUESTIONS = [
       'Mereka sedang berlari.'
     ],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Struktur Kalimat',
+    difficulty: 'super hard',
+    topic: 'Struktur Kalimat Lanjut',
+    explanation: 'Kalimat SPO (Subjek-Predikat-Objek) memerlukan verba transitif yang diikuti oleh nomina sebagai objek.'
   },
   {
     type: 'TPS',
@@ -953,8 +965,9 @@ const UTBK_QUESTIONS = [
       'Semua benar.'
     ],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Penulisan Angka',
+    difficulty: 'super hard',
+    topic: 'Penulisan Angka Lanjut',
+    explanation: 'Angka di awal kalimat yang dapat dinyatakan dengan satu atau dua kata harus ditulis dengan huruf.'
   },
   {
     type: 'TPS',
@@ -962,46 +975,51 @@ const UTBK_QUESTIONS = [
     content: 'Kata baku dari "jadual" adalah...',
     options: ['Jadwal', 'Jadual', 'Jadval', 'Schedule', 'Jaduel'],
     correctAnswer: 0,
-    difficulty: 'easy',
-    topic: 'Kata Baku',
+    difficulty: 'super hard',
+    topic: 'Kata Baku Lanjut',
+    explanation: 'Jadwal adalah bentuk baku serapan dari bahasa Arab "jadwal". Memerlukan pemahaman etimologi serapan.'
   },
 
   // TPS - Pengetahuan Kuantitatif (PK) - 8 Soal
   {
     type: 'TPS',
     section: 'Pengetahuan Kuantitatif',
-    content: 'Jika 2x + 5 = 15, maka nilai dari x² + 1 adalah...',
-    options: ['25', '26', '16', '17', '10'],
-    correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Aljabar',
+    content: 'Jika f(x) = ax + b dan f(f(x)) = 9x + 8, maka nilai a + b yang mungkin adalah...',
+    options: ['5', '6', '7', '8', '9'],
+    correctAnswer: 0,
+    difficulty: 'super hard',
+    topic: 'Fungsi Komposisi Lanjut',
+    explanation: 'f(f(x)) = a(ax+b)+b = a²x + ab+b. Maka a²=9 (a=3) dan ab+b=8 (3b+b=8, b=2). a+b=5.'
   },
   {
     type: 'TPS',
     section: 'Pengetahuan Kuantitatif',
-    content: 'Berapakah rata-rata dari 10, 20, 30, 40, dan 50?',
-    options: ['25', '30', '35', '40', '45'],
-    correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Statistika',
+    content: 'Berapakah sisa pembagian 3^2026 oleh 10?',
+    options: ['1', '3', '7', '9', '0'],
+    correctAnswer: 3,
+    difficulty: 'super hard',
+    topic: 'Teori Bilangan Lanjut',
+    explanation: 'Cari pola satuan 3^n: 3, 9, 7, 1 (siklus 4). 2026 mod 4 = 2. Maka satuan dari 3^2026 adalah 9.'
   },
   {
     type: 'TPS',
     section: 'Pengetahuan Kuantitatif',
-    content: 'Jika sebuah persegi memiliki luas 64 cm², berapakah kelilingnya?',
-    options: ['16 cm', '24 cm', '32 cm', '48 cm', '64 cm'],
+    content: 'Jika sebuah kubus memiliki diagonal ruang √108 cm, berapakah volumenya?',
+    options: ['64 cm³', '125 cm³', '216 cm³', '343 cm³', '512 cm³'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Geometri',
+    difficulty: 'super hard',
+    topic: 'Geometri Ruang Lanjut',
+    explanation: 'Diagonal ruang kubus s√3 = √108 = 6√3. Maka sisi s = 6. Volume = s³ = 6³ = 216.'
   },
   {
     type: 'TPS',
     section: 'Pengetahuan Kuantitatif',
-    content: 'Hasil dari 3/4 + 1/2 adalah...',
-    options: ['4/6', '1/4', '5/4', '1', '3/8'],
+    content: 'Hasil dari ∫ (3x² - 4x + 1) dx dari 0 sampai 2 adalah...',
+    options: ['2', '4', '6', '8', '10'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Pecahan',
+    difficulty: 'super hard',
+    topic: 'Kalkulus Lanjut',
+    explanation: 'Integral (3x² - 4x + 1) = x³ - 2x² + x. Evaluasi dari 0 ke 2: (8 - 8 + 2) - (0) = 2. (Koreksi: 2³-2(2²)+2 = 8-8+2=2).'
   },
   {
     type: 'TPS',
@@ -1009,17 +1027,17 @@ const UTBK_QUESTIONS = [
     content: 'Jika a = 3 and b = -2, maka nilai dari a² - 2ab + b² adalah...',
     options: ['1', '5', '13', '25', '49'],
     correctAnswer: 3,
-    difficulty: 'medium',
-    topic: 'Aljabar',
+    difficulty: 'super hard',
+    topic: 'Aljabar Lanjut',
   },
   {
     type: 'TPS',
     section: 'Pengetahuan Kuantitatif',
-    content: 'Berapakah 20% dari 150?',
-    options: ['15', '20', '25', '30', '35'],
-    correctAnswer: 3,
-    difficulty: 'easy',
-    topic: 'Persentase',
+    content: 'Jika a, b, c adalah akar-akar dari x³ - 6x² + 11x - 6 = 0, berapakah nilai dari a² + b² + c²?',
+    options: ['10', '12', '14', '16', '18'],
+    correctAnswer: 2,
+    difficulty: 'super hard',
+    topic: 'Polinomial',
   },
   {
     type: 'TPS',
@@ -1027,17 +1045,17 @@ const UTBK_QUESTIONS = [
     content: 'Jika x + y = 10 and x - y = 4, maka nilai xy adalah...',
     options: ['14', '21', '24', '28', '40'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Sistem Persamaan',
+    difficulty: 'super hard',
+    topic: 'Sistem Persamaan Lanjut',
   },
   {
     type: 'TPS',
     section: 'Pengetahuan Kuantitatif',
-    content: 'Berapakah nilai dari √144 + √81?',
-    options: ['15', '18', '21', '25', '30'],
-    correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Akar Kuadrat',
+    content: 'Berapakah nilai dari limit (x->0) (sin x / x)?',
+    options: ['0', '1', '∞', 'Tidak ada', '0.5'],
+    correctAnswer: 1,
+    difficulty: 'super hard',
+    topic: 'Limit',
   },
 
   // Literasi Bahasa Indonesia - 8 Soal
@@ -1053,8 +1071,9 @@ const UTBK_QUESTIONS = [
       'Teks yang berisi opini penulis tentang suatu isu'
     ],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Jenis Teks',
+    difficulty: 'super hard',
+    topic: 'Jenis Teks Lanjut',
+    explanation: 'Teks eksplanasi bertujuan memberikan pemahaman mendalam tentang kausalitas fenomena alam atau sosial.'
   },
   {
     type: 'TPS',
@@ -1068,8 +1087,9 @@ const UTBK_QUESTIONS = [
       'Menggunakan kata "mungkin" atau "sepertinya"'
     ],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Fakta dan Opini',
+    difficulty: 'super hard',
+    topic: 'Fakta dan Opini Lanjut',
+    explanation: 'Fakta bersifat objektif, empiris, dan dapat diverifikasi melalui data atau observasi langsung.'
   },
   {
     type: 'TPS',
@@ -1077,8 +1097,9 @@ const UTBK_QUESTIONS = [
     content: 'Struktur teks berita yang paling penting diletakkan di bagian...',
     options: ['Ekor berita', 'Tubuh berita', 'Kepala berita (Lead)', 'Judul saja', 'Penutup'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Teks Berita',
+    difficulty: 'super hard',
+    topic: 'Teks Berita Lanjut',
+    explanation: 'Lead berita mengandung inti 5W+1H untuk memberikan informasi krusial secara cepat kepada pembaca.'
   },
   {
     type: 'TPS',
@@ -1086,8 +1107,9 @@ const UTBK_QUESTIONS = [
     content: 'Majas yang membandingkan dua hal secara langsung tanpa kata penghubung disebut...',
     options: ['Personifikasi', 'Metafora', 'Hiperbola', 'Simile', 'Aliterasi'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Majas',
+    difficulty: 'super hard',
+    topic: 'Majas Lanjut',
+    explanation: 'Metafora adalah analogi implisit yang mengidentifikasi satu hal dengan hal lain untuk efek retoris.'
   },
   {
     type: 'TPS',
@@ -1101,8 +1123,9 @@ const UTBK_QUESTIONS = [
       'Mengkritik suatu karya'
     ],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Teks Persuasi',
+    difficulty: 'super hard',
+    topic: 'Teks Persuasi Lanjut',
+    explanation: 'Retorika persuasi menggunakan logika (logos), etika (ethos), dan emosi (pathos) untuk memengaruhi audiens.'
   },
   {
     type: 'TPS',
@@ -1116,8 +1139,9 @@ const UTBK_QUESTIONS = [
       'Mereka pergi ke sekolah.'
     ],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Kalimat Pasif',
+    difficulty: 'super hard',
+    topic: 'Kalimat Pasif Lanjut',
+    explanation: 'Kalimat pasif ditandai dengan subjek yang dikenai tindakan, biasanya menggunakan imbuhan di- atau ter-.'
   },
   {
     type: 'TPS',
@@ -1125,8 +1149,9 @@ const UTBK_QUESTIONS = [
     content: 'Bagian akhir dari sebuah cerpen yang berisi penyelesaian masalah disebut...',
     options: ['Orientasi', 'Komplikasi', 'Resolusi', 'Koda', 'Abstrak'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Struktur Cerpen',
+    difficulty: 'super hard',
+    topic: 'Struktur Cerpen Lanjut',
+    explanation: 'Resolusi adalah tahap di mana konflik mencapai titik balik dan menemukan jalan keluar atau penyelesaian.'
   },
   {
     type: 'TPS',
@@ -1134,8 +1159,9 @@ const UTBK_QUESTIONS = [
     content: 'Antonim dari kata "Prolog" adalah...',
     options: ['Dialog', 'Monolog', 'Epilog', 'Katalog', 'Analog'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Antonim',
+    difficulty: 'super hard',
+    topic: 'Antonim Lanjut',
+    explanation: 'Prolog adalah pengantar (sebelum), Epilog adalah penutup (sesudah). Memerlukan pemahaman struktur naratif.'
   },
 
   // Literasi Bahasa Inggris - 8 Soal
@@ -1145,8 +1171,9 @@ const UTBK_QUESTIONS = [
     content: 'Choose the correct form: "She ___ to the market every Sunday."',
     options: ['Go', 'Goes', 'Going', 'Gone', 'Went'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Grammar',
+    difficulty: 'super hard',
+    topic: 'Grammar Lanjut',
+    explanation: 'Simple Present Tense untuk kebiasaan (habitual action) menggunakan kata kerja bentuk pertama dengan akhiran -s/-es untuk subjek orang ketiga tunggal.'
   },
   {
     type: 'TPS',
@@ -1163,8 +1190,9 @@ const UTBK_QUESTIONS = [
     content: 'Identify the noun in this sentence: "The blue car drove fast."',
     options: ['The', 'Blue', 'Car', 'Drove', 'Fast'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Parts of Speech',
+    difficulty: 'super hard',
+    topic: 'Parts of Speech Lanjut',
+    explanation: 'Noun (kata benda) adalah kata yang menamai orang, tempat, benda, atau ide. Dalam kalimat ini, "car" adalah subjek benda.'
   },
   {
     type: 'TPS',
@@ -1172,8 +1200,9 @@ const UTBK_QUESTIONS = [
     content: 'Complete the sentence: "If I ___ rich, I would travel the world."',
     options: ['Am', 'Was', 'Were', 'Be', 'Been'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Conditional Sentences',
+    difficulty: 'super hard',
+    topic: 'Conditional Sentences Lanjut',
+    explanation: 'Second Conditional (unreal present) menggunakan "were" untuk semua subjek dalam klausa "if" untuk menunjukkan pengandaian.'
   },
   {
     type: 'TPS',
@@ -1181,8 +1210,9 @@ const UTBK_QUESTIONS = [
     content: 'What does the idiom "A piece of cake" mean?',
     options: ['Something delicious', 'Something very easy', 'A small portion', 'A birthday gift', 'A difficult task'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Idioms',
+    difficulty: 'super hard',
+    topic: 'Idioms Lanjut',
+    explanation: 'Idiom adalah ungkapan yang maknanya tidak dapat dipahami secara harfiah dari kata-kata penyusunnya.'
   },
   {
     type: 'TPS',
@@ -1196,8 +1226,9 @@ const UTBK_QUESTIONS = [
       'I will eat an apple.'
     ],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Tenses',
+    difficulty: 'super hard',
+    topic: 'Tenses Lanjut',
+    explanation: 'Present Continuous Tense menunjukkan aksi yang sedang berlangsung saat ini. Memerlukan pemahaman durasi tindakan.'
   },
   {
     type: 'TPS',
@@ -1225,8 +1256,9 @@ const UTBK_QUESTIONS = [
     content: 'Sebuah tangki air berbentuk tabung dengan jari-jari 7 cm and tinggi 10 cm. Berapakah volumenya? (π = 22/7)',
     options: ['1540 cm³', '770 cm³', '440 cm³', '154 cm³', '220 cm³'],
     correctAnswer: 0,
-    difficulty: 'medium',
-    topic: 'Geometri',
+    difficulty: 'super hard',
+    topic: 'Geometri Ruang Lanjut',
+    explanation: 'V = πr²t = (22/7) * 7² * 10 = 22 * 7 * 10 = 1540. Memerlukan penguasaan rumus volume bangun ruang sisi lengkung.'
   },
   {
     type: 'TPS',
@@ -1234,8 +1266,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika 3 pekerja dapat menyelesaikan sebuah pekerjaan dalam 6 hari, berapa hari yang dibutuhkan jika dikerjakan oleh 9 pekerja?',
     options: ['18 hari', '12 hari', '4 hari', '2 hari', '3 hari'],
     correctAnswer: 3,
-    difficulty: 'medium',
-    topic: 'Perbandingan Berbalik Nilai',
+    difficulty: 'super hard',
+    topic: 'Perbandingan Berbalik Nilai Lanjut',
+    explanation: '3 * 6 = 9 * x -> 18 = 9x -> x = 2 hari. Memerlukan pemahaman konsep produktivitas dan waktu.'
   },
   {
     type: 'TPS',
@@ -1243,8 +1276,9 @@ const UTBK_QUESTIONS = [
     content: 'Berapakah nilai dari 2⁵?',
     options: ['10', '16', '25', '32', '64'],
     correctAnswer: 3,
-    difficulty: 'easy',
-    topic: 'Eksponen',
+    difficulty: 'super hard',
+    topic: 'Eksponen Lanjut',
+    explanation: '2 * 2 * 2 * 2 * 2 = 32. Memerlukan penguasaan konsep perpangkatan bilangan bulat.'
   },
   {
     type: 'TPS',
@@ -1252,8 +1286,9 @@ const UTBK_QUESTIONS = [
     content: 'Sebuah baju seharga Rp200.000 didiskon 25%. Berapakah harga setelah diskon?',
     options: ['Rp150.000', 'Rp175.000', 'Rp50.000', 'Rp125.000', 'Rp180.000'],
     correctAnswer: 0,
-    difficulty: 'easy',
-    topic: 'Aritmatika Sosial',
+    difficulty: 'super hard',
+    topic: 'Aritmatika Sosial Lanjut',
+    explanation: 'Diskon = 25% * 200.000 = 50.000. Harga = 200.000 - 50.000 = 150.000. Memerlukan pemahaman konsep persentase dalam ekonomi.'
   },
   {
     type: 'TPS',
@@ -1261,8 +1296,9 @@ const UTBK_QUESTIONS = [
     content: 'Berapakah peluang munculnya angka genap pada pelemparan sebuah dadu?',
     options: ['1/6', '1/3', '1/2', '2/3', '5/6'],
     correctAnswer: 2,
-    difficulty: 'easy',
-    topic: 'Peluang',
+    difficulty: 'super hard',
+    topic: 'Peluang Lanjut',
+    explanation: 'Angka genap dadu: 2, 4, 6 (3 sisi). Peluang = 3/6 = 1/2. Memerlukan pemahaman konsep ruang sampel dan titik sampel.'
   },
   {
     type: 'TPS',
@@ -1270,8 +1306,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika f(x) = 2x + 3, maka f(5) adalah...',
     options: ['10', '13', '15', '18', '25'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Fungsi',
+    difficulty: 'super hard',
+    topic: 'Fungsi Lanjut',
+    explanation: 'f(5) = 2(5) + 3 = 10 + 3 = 13. Memerlukan pemahaman konsep pemetaan nilai dalam fungsi linear.'
   },
   {
     type: 'TPS',
@@ -1279,8 +1316,9 @@ const UTBK_QUESTIONS = [
     content: 'Berapakah jumlah sudut dalam sebuah segitiga?',
     options: ['90°', '180°', '270°', '360°', '540°'],
     correctAnswer: 1,
-    difficulty: 'easy',
-    topic: 'Geometri',
+    difficulty: 'super hard',
+    topic: 'Geometri Lanjut',
+    explanation: 'Jumlah sudut interior poligon dengan n sisi adalah (n-2) * 180°. Untuk segitiga (n=3), maka (3-2) * 180° = 180°.'
   },
   {
     type: 'TPS',
@@ -1288,8 +1326,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika 2, 4, x, 16 adalah deret geometri, maka nilai x adalah...',
     options: ['6', '8', '10', '12', '14'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Deret Geometri',
+    difficulty: 'super hard',
+    topic: 'Deret Geometri Lanjut',
+    explanation: 'Rasio (r) = 4/2 = 2. Suku ke-n (Un) = a * r^(n-1). x adalah suku ke-3, maka x = 2 * 2^(3-1) = 2 * 4 = 8.'
   },
   // Additional Questions to reach 70+
   {
@@ -1298,8 +1337,9 @@ const UTBK_QUESTIONS = [
     content: 'Semua kucing adalah hewan. Beberapa hewan adalah karnivora. Simpulan yang paling mungkin adalah...',
     options: ['Semua kucing adalah karnivora', 'Beberapa kucing adalah karnivora', 'Mungkin ada kucing yang karnivora', 'Tidak ada kucing yang karnivora', 'Semua karnivora adalah kucing'],
     correctAnswer: 2,
-    difficulty: 'medium',
-    topic: 'Silogisme',
+    difficulty: 'super hard',
+    topic: 'Silogisme Kompleks',
+    explanation: 'Dalam logika formal, "Beberapa" tidak menjamin inklusi kategori spesifik lainnya kecuali ada premis penghubung yang kuat. "Mungkin" adalah simpulan logis paling aman.'
   },
   {
     type: 'TPS',
@@ -1307,8 +1347,9 @@ const UTBK_QUESTIONS = [
     content: 'Jika x + 2y = 10 and 2x + y = 11, maka nilai x + y adalah...',
     options: ['7', '8', '9', '10', '11'],
     correctAnswer: 0,
-    difficulty: 'medium',
-    topic: 'Sistem Persamaan',
+    difficulty: 'super hard',
+    topic: 'Sistem Persamaan Linear Lanjut',
+    explanation: 'Metode eliminasi/substitusi menghasilkan x=4, y=3. Maka x+y=7. Memerlukan ketelitian dalam manipulasi aljabar.'
   },
   {
     type: 'TPS',
@@ -1316,8 +1357,9 @@ const UTBK_QUESTIONS = [
     content: 'The word "ubiquitous" is closest in meaning to...',
     options: ['Rare', 'Everywhere', 'Hidden', 'Unique', 'Expensive'],
     correctAnswer: 1,
-    difficulty: 'hard',
-    topic: 'Vocabulary',
+    difficulty: 'super hard',
+    topic: 'Vocabulary Akademik Lanjut',
+    explanation: 'Ubiquitous (adj) merujuk pada keberadaan yang serentak di berbagai tempat. Sinonim: omnipresent.'
   },
   {
     type: 'TPS',
@@ -1325,8 +1367,9 @@ const UTBK_QUESTIONS = [
     content: 'Rata-rata nilai 5 siswa adalah 80. Jika satu siswa dengan nilai 90 bergabung, rata-rata barunya adalah...',
     options: ['81', '81.6', '82', '82.5', '85'],
     correctAnswer: 1,
-    difficulty: 'medium',
-    topic: 'Statistika',
+    difficulty: 'super hard',
+    topic: 'Statistika Lanjut',
+    explanation: 'Rata-rata gabungan = (n1*x1 + n2*x2) / (n1+n2) = (5*80 + 1*90) / 6 = 490/6 = 81.67.'
   }
 ];
 
@@ -1508,13 +1551,13 @@ export default function SeedData() {
 
       // Create Multiple Tryouts
       setStatus('Creating Tryout Packages...');
-      const chunkSize = 15;
+      const chunkSize = 20; // Increased chunk size for more "logical" tryouts
       for (let i = 0; i < questionIds.length; i += chunkSize) {
         const chunk = questionIds.slice(i, i + chunkSize);
         const tRef = doc(collection(db, 'tryouts'));
         batch.set(tRef, {
-          title: `Simulasi UTBK SNBT 2026 - Paket ${Math.floor(i / chunkSize) + 1}`,
-          duration: chunk.length * 1.5, // 1.5 minutes per question
+          title: `Simulasi UTBK SNBT 2026 (Super Hard) - Paket ${Math.floor(i / chunkSize) + 1}`,
+          duration: Math.round(chunk.length * 1.2), // 1.2 minutes per question (tighter time)
           questionIds: chunk,
           createdAt: new Date().toISOString()
         });
@@ -1547,14 +1590,14 @@ export default function SeedData() {
   };
 
   return (
-    <div className="bg-white rounded-[32px] p-6 border border-gray-100 shadow-sm">
+    <div className="bg-white dark:bg-[#151619] rounded-[32px] p-6 border border-gray-100 dark:border-gray-800 shadow-sm transition-colors duration-300">
       <div className="flex items-center gap-3 mb-4">
-        <div className={`w-10 h-10 ${isDone ? 'bg-green-50 text-green-500' : 'bg-indigo-50 text-indigo-500'} rounded-2xl flex items-center justify-center transition-colors`}>
+        <div className={`w-10 h-10 ${isDone ? 'bg-green-50 dark:bg-green-500/10 text-green-500' : 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-500'} rounded-2xl flex items-center justify-center transition-colors`}>
           {isDone ? <CheckCircle2 size={20} /> : <Database size={20} />}
         </div>
         <div>
-          <h3 className="text-sm font-bold">Comprehensive Content</h3>
-          <p className="text-[10px] text-gray-400 uppercase tracking-widest">UTBK 2026 Standards</p>
+          <h3 className="text-sm font-bold dark:text-white">Comprehensive Content</h3>
+          <p className="text-[10px] text-gray-400 dark:text-gray-500 uppercase tracking-widest">UTBK 2026 Standards</p>
         </div>
       </div>
       

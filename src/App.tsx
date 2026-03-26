@@ -15,6 +15,10 @@ import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import HelpCenter from './pages/HelpCenter';
+import SavedQuestions from './pages/SavedQuestions';
+import AITutor from './pages/AITutor';
+import Predictor from './pages/Predictor';
+import Flashcards from './pages/Flashcards';
 
 // Components
 import Navbar from './components/Navbar';
@@ -24,6 +28,20 @@ export default function App() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState<any>(null);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    return saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
 
   useEffect(() => {
     console.log('Setting up auth listener...');
@@ -73,7 +91,7 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-[#F5F5F0]">
+      <div className="flex items-center justify-center h-screen bg-[#F5F5F0] dark:bg-[#0a0a0a] transition-colors duration-300">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#5A5A40]"></div>
       </div>
     );
@@ -81,8 +99,8 @@ export default function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-[#F5F5F0] text-[#1a1a1a] font-sans">
-        {user && <Navbar user={user} userData={userData} />}
+      <div className="min-h-screen bg-[#F5F5F0] dark:bg-[#0a0a0a] text-[#1a1a1a] dark:text-white font-sans transition-colors duration-300">
+        {user && <Navbar user={user} userData={userData} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />}
         <div className="flex">
           {user && <Sidebar />}
           <main className={`flex-1 ${user ? 'p-4 md:p-8' : ''}`}>
@@ -94,9 +112,13 @@ export default function App() {
               <Route path="/tryout-results/:resultId" element={user ? <TryoutResults /> : <Navigate to="/login" />} />
               <Route path="/materials" element={user ? <Materials /> : <Navigate to="/login" />} />
               <Route path="/leaderboard" element={user ? <Leaderboard /> : <Navigate to="/login" />} />
+              <Route path="/saved" element={user ? <SavedQuestions /> : <Navigate to="/login" />} />
+              <Route path="/ai-tutor" element={user ? <AITutor /> : <Navigate to="/login" />} />
               <Route path="/profile" element={user ? <Profile userData={userData} /> : <Navigate to="/login" />} />
               <Route path="/settings" element={user ? <Settings /> : <Navigate to="/login" />} />
               <Route path="/help" element={user ? <HelpCenter /> : <Navigate to="/login" />} />
+              <Route path="/predictor" element={user ? <Predictor /> : <Navigate to="/login" />} />
+              <Route path="/flashcards" element={user ? <Flashcards /> : <Navigate to="/login" />} />
             </Routes>
           </main>
         </div>

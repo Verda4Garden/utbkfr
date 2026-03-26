@@ -132,5 +132,9 @@ service cloud.firestore {
       allow read: if isAuthenticated();
       allow write: if isAdmin();
     }
+
+    match /savedQuestions/{savedQuestionId} {
+      allow read, create, delete: if isAuthenticated() && (resource.data.userId == request.auth.uid || request.resource.data.userId == request.auth.uid);
+    }
   }
 }
