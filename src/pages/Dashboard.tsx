@@ -117,15 +117,38 @@ export default function Dashboard({ userData }: DashboardProps) {
   }, [userData]);
 
   const targetScore = 750; // Average FK UI passing grade
+  
+  // Calculate moving average of last 3 tryouts for a more stable probability
+  const recentTryouts = recentResults.slice(-3);
+  const averageScore = recentTryouts.length > 0 
+    ? Math.round(recentTryouts.reduce((acc, curr) => acc + curr.score, 0) / recentTryouts.length)
+    : 0;
+  
   const currentScore = recentResults.length > 0 ? recentResults[recentResults.length - 1].score : 0;
-  const progress = Math.min(100, Math.round((currentScore / targetScore) * 100));
-  const accuracy = recentResults.length > 0 ? Math.round(currentScore / 10) : 0;
+    
+  const progress = Math.min(100, Math.round((averageScore / targetScore) * 100));
+  const accuracy = recentTryouts.length > 0 
+    ? Math.round((recentTryouts.reduce((acc, curr) => acc + (curr.score / 10), 0) / recentTryouts.length))
+    : 0;
+  
+  // Determine trend
+  let trend = 'stable';
+  if (recentTryouts.length >= 2) {
+    const last = recentTryouts[recentTryouts.length - 1].score;
+    const prev = recentTryouts[recentTryouts.length - 2].score;
+    if (last > prev) trend = 'improving';
+    else if (last < prev) trend = 'declining';
+  }
   
   let probabilityText = 'Take a TO';
   if (recentResults.length > 0) {
     if (progress >= 90) probabilityText = 'Excellent Chance';
-    else if (progress >= 70) probabilityText = 'High Chance';
-    else if (progress >= 50) probabilityText = 'Moderate Chance';
+    else if (progress >= 70) {
+      probabilityText = trend === 'improving' ? 'Very High Chance' : 'High Chance';
+    }
+    else if (progress >= 50) {
+      probabilityText = trend === 'improving' ? 'Promising Chance' : 'Moderate Chance';
+    }
     else probabilityText = 'Needs Improvement';
   }
 

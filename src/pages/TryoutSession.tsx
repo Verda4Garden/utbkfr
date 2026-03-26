@@ -90,8 +90,8 @@ export default function TryoutSession() {
         completedAt: serverTimestamp(),
       };
 
-      await addDoc(collection(db, 'results'), resultData);
-      navigate('/');
+      const resultRef = await addDoc(collection(db, 'results'), resultData);
+      navigate('/tryout-results/' + resultRef.id);
     } catch (error) {
       handleFirestoreError(error, OperationType.CREATE, 'results');
     } finally {

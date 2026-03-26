@@ -8,6 +8,7 @@ import { doc, getDoc, setDoc } from 'firebase/firestore';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import TryoutSession from './pages/TryoutSession';
+import TryoutResults from './pages/TryoutResults';
 import Tryouts from './pages/Tryouts';
 import Materials from './pages/Materials';
 import Leaderboard from './pages/Leaderboard';
@@ -90,6 +91,7 @@ export default function App() {
               <Route path="/" element={user ? <Dashboard userData={userData} /> : <Navigate to="/login" />} />
               <Route path="/tryouts" element={user ? <Tryouts /> : <Navigate to="/login" />} />
               <Route path="/tryout/:id" element={user ? <TryoutSession /> : <Navigate to="/login" />} />
+              <Route path="/tryout-results/:resultId" element={user ? <TryoutResults /> : <Navigate to="/login" />} />
               <Route path="/materials" element={user ? <Materials /> : <Navigate to="/login" />} />
               <Route path="/leaderboard" element={user ? <Leaderboard /> : <Navigate to="/login" />} />
               <Route path="/profile" element={user ? <Profile userData={userData} /> : <Navigate to="/login" />} />
