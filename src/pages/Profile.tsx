@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'motion/react';
-import { User as UserIcon, Mail, Target, Award, Zap, Clock, ChevronRight, Stethoscope, Edit2, ShieldCheck } from 'lucide-react';
+import { User as UserIcon, Mail, Target, Award, Zap, Clock, ChevronRight, Stethoscope, Edit2, ShieldCheck, FileCheck } from 'lucide-react';
 import { db, auth } from '../firebase';
-import { doc, updateDoc, collection, query, where, orderBy, limit, getDocs, deleteDoc } from 'firebase/firestore';
+import { doc, updateDoc, collection, query, where, orderBy, limit, getDocs, deleteDoc, arrayRemove } from 'firebase/firestore';
+import CertificateGenerator from '../components/CertificateGenerator';
 
 interface ProfileProps {
   userData: any;
@@ -14,24 +15,44 @@ export default function Profile({ userData }: ProfileProps) {
   const [isSaving, setIsSaving] = useState(false);
   const [recentActivity, setRecentActivity] = useState<any[]>([]);
   const [loadingActivity, setLoadingActivity] = useState(true);
+  const [activityLimit, setActivityLimit] = useState(5);
+
+  const handleDeleteCertificate = async (certId: string) => {
+    if (!window.confirm('Hapus sertifikat ini?')) return;
+    
+    try {
+      // Find the specific certificate to remove
+      const certToDelete = userData.certificates.find((c: any) => c.id === certId);
+      if (certToDelete) {
+        await updateDoc(doc(db, 'users', userData.uid), {
+          certificates: arrayRemove(certToDelete)
+        });
+        // No need to manually update state as App.tsx has a snapshot listener
+      }
+    } catch (error) {
+      console.error('Error deleting certificate:', error);
+      alert('Gagal menghapus sertifikat. Silakan coba lagi.');
+    }
+  };
 
   useEffect(() => {
     const fetchActivity = async () => {
       if (!userData?.uid) return;
+      setLoadingActivity(true);
       try {
         const q = query(
           collection(db, 'results'),
           where('userId', '==', userData.uid),
           orderBy('completedAt', 'desc'),
-          limit(5)
+          limit(activityLimit)
         );
         const snapshot = await getDocs(q);
         const activities = snapshot.docs.map(doc => {
           const data = doc.data();
           return {
             action: `Completed Tryout`,
-            time: data.completedAt?.toDate?.()?.toLocaleDateString() || 'Recent',
-            score: `Score: ${data.score}`,
+            time: data.completedAt?.toDate?.()?.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) || 'Baru saja',
+            score: `Score: ${Math.round(data.score)}`,
             icon: Clock
           };
         });
@@ -43,7 +64,7 @@ export default function Profile({ userData }: ProfileProps) {
       }
     };
     fetchActivity();
-  }, [userData?.uid]);
+  }, [userData?.uid, activityLimit]);
 
   const handleSave = async () => {
     setIsSaving(true);
@@ -209,6 +230,36 @@ export default function Profile({ userData }: ProfileProps) {
         </div>
       </section>
 
+      {/* Certificates Section */}
+      <section className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-serif font-bold text-[#1a1a1a] dark:text-white flex items-center gap-3">
+            Sertifikat Pencapaian <FileCheck className="text-[#5A5A40]" size={24} />
+          </h2>
+        </div>
+        
+        <div className="space-y-6">
+          {userData?.certificates && userData.certificates.length > 0 ? (
+            userData.certificates.map((cert: any) => (
+              <CertificateGenerator 
+                key={cert.id}
+                userName={userData.displayName}
+                certificateType={cert.type}
+                date={new Date(cert.earnedAt).toLocaleDateString()}
+                score={cert.score}
+                onDelete={() => handleDeleteCertificate(cert.id)}
+              />
+            ))
+          ) : (
+            <div className="bg-white dark:bg-[#151619] rounded-[40px] p-12 text-center border border-dashed border-gray-200 dark:border-gray-800">
+              <Award className="mx-auto text-gray-300 dark:text-gray-700 mb-4" size={48} />
+              <h3 className="text-lg font-serif font-bold dark:text-white">Belum ada sertifikat</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Selesaikan tryout dengan skor &gt;750 atau selesaikan 10 paket untuk mendapatkan sertifikat.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Activity Log */}
       <section className="bg-white dark:bg-[#151619] rounded-[40px] p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-800">
         <h2 className="text-2xl font-serif font-bold text-[#1a1a1a] dark:text-white mb-8">Recent Activity</h2>
@@ -234,7 +285,10 @@ export default function Profile({ userData }: ProfileProps) {
             <div className="text-center text-gray-500 dark:text-gray-400 py-4">No recent activity found. Start a tryout!</div>
           )}
         </div>
-        <button className="mt-8 w-full bg-[#F5F5F0] dark:bg-gray-800 text-[#1a1a1a] dark:text-white font-bold py-4 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all text-sm flex items-center justify-center gap-2">
+        <button 
+          onClick={() => setActivityLimit(prev => prev + 10)}
+          className="mt-8 w-full bg-[#F5F5F0] dark:bg-gray-800 text-[#1a1a1a] dark:text-white font-bold py-4 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-all text-sm flex items-center justify-center gap-2"
+        >
           View Full History
           <ChevronRight size={16} />
         </button>

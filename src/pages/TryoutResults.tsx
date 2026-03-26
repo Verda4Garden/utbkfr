@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db, auth } from '../firebase';
-import { doc, getDoc, setDoc, deleteDoc, collection, query, where, getDocs } from 'firebase/firestore';
-import { Bookmark, ChevronLeft, CheckCircle, XCircle } from 'lucide-react';
+import { doc, getDoc, setDoc, deleteDoc, collection, query, where, getDocs, updateDoc, arrayUnion } from 'firebase/firestore';
+import { Bookmark, ChevronLeft, CheckCircle, XCircle, Award } from 'lucide-react';
 
 export default function TryoutResults() {
   const { resultId } = useParams();
@@ -49,6 +49,56 @@ export default function TryoutResults() {
         const resultData = resultDoc.data();
         setResult(resultData);
 
+        // Check for milestones if not already checked for this result
+        if (!resultData.milestonesChecked && auth.currentUser) {
+          // Mark result as checked IMMEDIATELY to prevent race conditions
+          await updateDoc(doc(db, 'results', resultId!), {
+            milestonesChecked: true
+          });
+
+          const userDoc = await getDoc(doc(db, 'users', auth.currentUser.uid));
+          const userData = userDoc.data();
+          
+          if (userData) {
+            const newCertificates = [];
+            const existingCerts = userData.certificates || [];
+            
+            // Elite Scorer Milestone
+            if (resultData.score >= 750) {
+              const hasElite = existingCerts.some((c: any) => c.type === 'Elite Scorer (>750)');
+              if (!hasElite) {
+                newCertificates.push({
+                  id: `elite_${resultId}_${Date.now()}`,
+                  type: 'Elite Scorer (>750)',
+                  earnedAt: new Date().toISOString(),
+                  score: Math.round(resultData.score)
+                });
+              }
+            }
+
+            // 10 Tryouts Milestone
+            const resultsQuery = query(collection(db, 'results'), where('userId', '==', auth.currentUser.uid));
+            const resultsSnapshot = await getDocs(resultsQuery);
+            if (resultsSnapshot.size >= 10) {
+              const hasTen = existingCerts.some((c: any) => c.type === 'Tryout Master (10 Packages)');
+              if (!hasTen) {
+                newCertificates.push({
+                  id: `master_${auth.currentUser.uid}_${Date.now()}`,
+                  type: 'Tryout Master (10 Packages)',
+                  earnedAt: new Date().toISOString(),
+                  score: Math.round(resultData.score)
+                });
+              }
+            }
+
+            if (newCertificates.length > 0) {
+              await updateDoc(doc(db, 'users', auth.currentUser.uid), {
+                certificates: arrayUnion(...newCertificates)
+              });
+            }
+          }
+        }
+
         const tryoutDoc = await getDoc(doc(db, 'tryouts', resultData.tryoutId));
         const tryoutData = tryoutDoc.data();
         
@@ -76,7 +126,19 @@ export default function TryoutResults() {
       </header>
 
       <div className="bg-white dark:bg-[#151619] rounded-[32px] p-8 shadow-sm border border-gray-100 dark:border-gray-800">
-        <h2 className="text-xl font-bold mb-6 dark:text-white">Score: {result.score}</h2>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+          <h2 className="text-3xl font-serif font-bold dark:text-white">Skor Akhir: {Math.round(result.score)}</h2>
+          {result.score > 750 && (
+            <div className="bg-[#5A5A40] text-white px-6 py-3 rounded-2xl flex items-center gap-3 shadow-lg animate-bounce">
+              <Award size={24} />
+              <div>
+                <p className="text-[10px] uppercase tracking-widest font-bold opacity-80">New Achievement!</p>
+                <p className="text-sm font-bold">Sertifikat Elite Scorer Tersedia di Profil</p>
+              </div>
+            </div>
+          )}
+        </div>
+        
         <div className="space-y-8">
           {questions.map((q, idx) => {
             const userAnswer = result.answers[q.id];

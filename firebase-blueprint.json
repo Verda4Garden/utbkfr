@@ -14,7 +14,8 @@
         "level": { "type": "integer" },
         "badges": { "type": "array", "items": { "type": "string" } },
         "streak": { "type": "integer" },
-        "lastActive": { "type": "string", "format": "date-time" }
+        "lastActive": { "type": "string", "format": "date-time" },
+        "certificates": { "type": "array", "items": { "type": "object", "properties": { "id": { "type": "string" }, "type": { "type": "string" }, "earnedAt": { "type": "string", "format": "date-time" } } } }
       },
       "required": ["uid", "email"]
     },
@@ -77,6 +78,23 @@
         "section": { "type": "string" }
       },
       "required": ["title", "content", "topic"]
+    },
+    "Flashcard": {
+      "title": "Flashcard",
+      "description": "User-specific flashcard for spaced repetition",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "question": { "type": "string" },
+        "answer": { "type": "string" },
+        "category": { "type": "string" },
+        "interval": { "type": "integer", "description": "Days until next review" },
+        "easeFactor": { "type": "number", "description": "Difficulty multiplier" },
+        "nextReview": { "type": "string", "format": "date-time" },
+        "repetition": { "type": "integer" },
+        "lastReviewed": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "question", "answer", "interval", "easeFactor", "nextReview"]
     }
   },
   "firestore": {
@@ -84,6 +102,7 @@
     "questions": { "schema": "Question", "description": "Question bank" },
     "tryouts": { "schema": "Tryout", "description": "Available tryouts" },
     "results": { "schema": "Result", "description": "User results" },
-    "materials": { "schema": "Material", "description": "Learning materials" }
+    "materials": { "schema": "Material", "description": "Learning materials" },
+    "flashcards": { "schema": "Flashcard", "description": "User flashcards" }
   }
 }

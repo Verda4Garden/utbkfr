@@ -45,18 +45,25 @@ export default function App() {
 
   useEffect(() => {
     console.log('Setting up auth listener...');
-    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+    let userUnsubscribe: (() => void) | null = null;
+
+    const authUnsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       console.log('Auth state changed:', currentUser ? `User: ${currentUser.email}` : 'No user');
       
+      if (userUnsubscribe) {
+        userUnsubscribe();
+        userUnsubscribe = null;
+      }
+
       try {
         if (currentUser) {
-          console.log('Fetching user data for:', currentUser.uid);
-          const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+          console.log('Setting up real-time user data listener for:', currentUser.uid);
           
-          if (userDoc.exists()) {
-            console.log('User data found');
-            setUserData(userDoc.data());
-          } else {
+          // Check if user doc exists first, if not create it
+          const userDocRef = doc(db, 'users', currentUser.uid);
+          const userDoc = await getDoc(userDocRef);
+          
+          if (!userDoc.exists()) {
             console.log('Creating new user profile...');
             const newData = {
               uid: currentUser.uid,
@@ -69,12 +76,20 @@ export default function App() {
               badges: [],
               streak: 0,
               lastActive: new Date().toISOString(),
-              role: 'user'
+              role: 'user',
+              certificates: []
             };
-            await setDoc(doc(db, 'users', currentUser.uid), newData);
+            await setDoc(userDocRef, newData);
             console.log('New user profile created');
-            setUserData(newData);
           }
+
+          // Listen for real-time updates
+          const { onSnapshot } = await import('firebase/firestore');
+          userUnsubscribe = onSnapshot(userDocRef, (doc) => {
+            if (doc.exists()) {
+              setUserData(doc.data());
+            }
+          });
         } else {
           setUserData(null);
         }
@@ -86,7 +101,11 @@ export default function App() {
         console.log('Auth initialization complete');
       }
     });
-    return () => unsubscribe();
+
+    return () => {
+      authUnsubscribe();
+      if (userUnsubscribe) userUnsubscribe();
+    };
   }, []);
 
   if (loading) {
