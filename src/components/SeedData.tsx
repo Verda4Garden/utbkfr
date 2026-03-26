@@ -685,35 +685,128 @@ const UTBK_MATERIALS = [
     title: 'Penalaran Umum (PU): Logika Proposisi & Silogisme',
     section: 'TPS',
     topic: 'Logika & Analitik',
-    content: '# Penalaran Umum (PU): Logika Proposisi & Silogisme\n\nPenalaran Umum (PU) adalah jantung dari TPS. Di sini, logika Anda diuji secara maksimal.\n\n## 1. Logika Proposisi\nMemahami hubungan antar pernyataan. \n- **Modus Ponens**: Jika P maka Q. P terjadi, maka Q pasti terjadi.\n- **Modus Tollens**: Jika P maka Q. Q tidak terjadi, maka P pasti tidak terjadi.\n- **Silogisme**: Jika P maka Q, dan jika Q maka R. Maka jika P maka R.\n\n## 2. Penalaran Analitik\nMenyusun data yang acak menjadi urutan yang logis. Biasanya berupa soal tentang tinggi badan, urutan duduk, atau jadwal kegiatan.\n\n## Referensi Belajar:\n- **Blog Brain Academy**: [Contoh Soal Tes Skolastik UTBK (20 soal + pembahasan)](https://www.brainacademy.id/blog/contoh-soal-tes-skolastik-utbk)',
+    content: `# Penalaran Umum (PU): Logika Proposisi & Silogisme
+
+Penalaran Umum adalah subtes yang menguji kemampuan Anda dalam menarik kesimpulan logis dari premis-premis yang diberikan.
+
+## 1. Logika Proposisi
+Logika proposisi berfokus pada hubungan antar pernyataan.
+- **Modus Ponens**: Jika P maka Q. P terjadi, maka Q pasti terjadi.
+- **Modus Tollens**: Jika P maka Q. Q tidak terjadi, maka P pasti tidak terjadi.
+- **Silogisme Hipotetik**: Jika P maka Q, dan jika Q maka R. Maka jika P maka R.
+
+## 2. Penalaran Analitik
+Ini adalah jenis soal yang paling memakan waktu. Anda diminta menyusun data acak.
+- **Tips**: Gunakan tabel atau diagram untuk memvisualisasikan data.
+- **Contoh**: Jika A lebih tinggi dari B, dan C lebih pendek dari B, maka urutannya adalah A > B > C.
+
+## 3. Strategi Pengerjaan Soal PU
+1. **Identifikasi Premis**: Tuliskan premis-premis dalam bentuk simbolis jika perlu.
+2. **Hindari Asumsi**: Jangan memasukkan informasi yang tidak ada dalam teks.
+3. **Analisis Opsi**: Eliminasi jawaban yang bertentangan dengan premis.
+
+## Referensi Belajar:
+- **Blog Brain Academy**: [Contoh Soal Tes Skolastik UTBK (20 soal + pembahasan)](https://www.brainacademy.id/blog/contoh-soal-tes-skolastik-utbk)`,
     videoUrl: 'https://www.youtube.com/watch?v=pw_PzW_eG90'
   },
   {
     title: 'Pengetahuan Kuantitatif (PK): Aljabar, Geometri, Peluang',
     section: 'TPS',
     topic: 'Matematika Dasar',
-    content: '# Pengetahuan Kuantitatif (PK)\n\nPengetahuan Kuantitatif menguji pemahaman Anda tentang konsep matematika dasar dan penerapannya.\n\n## Topik Utama:\n1. **Aljabar**: Persamaan linear, kuadrat, dan sistem persamaan.\n2. **Geometri**: Luas, keliling, volume, dan sudut pada bangun datar/ruang.\n3. **Statistika**: Mean, median, modus, dan simpangan.\n4. **Peluang**: Kejadian majemuk dan kombinasi.\n\n## Referensi Belajar:\n- **Blog Brain Academy**: [Soal UTBK Pengetahuan Kuantitatif (Statistika + pembahasan)](https://www.brainacademy.id/blog/soal-utbk-pengetahuan-kuantitatif)',
+    content: `# Pengetahuan Kuantitatif (PK)
+
+PK menguji pemahaman konsep matematika dasar dan penerapannya secara cepat.
+
+## Topik Utama & Rumus Penting
+1. **Aljabar**:
+   - Persamaan Linear: ax + b = c
+   - Persamaan Kuadrat: ax² + bx + c = 0 (Gunakan rumus ABC atau faktorisasi)
+2. **Geometri**:
+   - Luas Persegi: s²
+   - Luas Lingkaran: πr²
+   - Volume Tabung: πr²t
+3. **Statistika**:
+   - Mean: Jumlah data / Banyak data
+   - Median: Nilai tengah (setelah diurutkan)
+4. **Peluang**:
+   - P(A) = n(A) / n(S)
+
+## Strategi Pengerjaan:
+- **Latihan Kecepatan**: PK adalah soal kecepatan. Hafalkan tabel perkalian, kuadrat, dan akar.
+- **Estimasi**: Jika soal pilihan ganda, gunakan estimasi untuk mengeliminasi jawaban yang tidak masuk akal.
+
+## Referensi Belajar:
+- **Blog Brain Academy**: [Soal UTBK Pengetahuan Kuantitatif (Statistika + pembahasan)](https://www.brainacademy.id/blog/soal-utbk-pengetahuan-kuantitatif)`,
     videoUrl: 'https://www.youtube.com/watch?v=n9jZoKJ7qc0'
   },
   {
     title: 'Literasi Bahasa Indonesia: Ide Pokok & PUEBI',
     section: 'Literasi',
     topic: 'Bahasa Indonesia',
-    content: '# Literasi Bahasa Indonesia\n\nFokus pada pemahaman bacaan dan aturan bahasa yang baku.\n\n## Fokus Pembelajaran:\n- **Ide Pokok**: Menemukan inti dari paragraf.\n- **Simpulan**: Menarik garis besar dari seluruh bacaan.\n- **PUEBI**: Pedoman Umum Ejaan Bahasa Indonesia (tanda baca, huruf kapital, kata baku).\n\n## Referensi Belajar:\n- **Blog Brain Academy**: [Soal Tes Skolastik Literasi Bahasa Indonesia (Ide pokok + pembahasan)](https://www.brainacademy.id/blog/soal-tes-skolastik-literasi-bahasa-indonesia)',
+    content: `# Literasi Bahasa Indonesia
+
+Subtes ini menguji kemampuan membaca, memahami, dan menganalisis teks.
+
+## Fokus Pembelajaran:
+1. **Ide Pokok**: Biasanya terletak di awal (deduktif), akhir (induktif), atau campuran.
+2. **Simpulan**: Inti dari seluruh paragraf yang mencakup gagasan utama.
+3. **PUEBI**:
+   - Penggunaan huruf kapital (nama orang, tempat, awal kalimat).
+   - Tanda baca (koma, titik, titik dua).
+   - Kata baku (contoh: 'jadwal' bukan 'jadual', 'apotek' bukan 'apotik').
+
+## Strategi Pengerjaan:
+- **Membaca Cepat**: Fokus pada kalimat pertama dan terakhir paragraf.
+- **Analisis Kata**: Perhatikan kata hubung (konjungsi) untuk memahami alur pikiran penulis.
+
+## Referensi Belajar:
+- **Blog Brain Academy**: [Soal Tes Skolastik Literasi Bahasa Indonesia (Ide pokok + pembahasan)](https://www.brainacademy.id/blog/soal-tes-skolastik-literasi-bahasa-indonesia)`,
     videoUrl: 'https://www.youtube.com/watch?v=ZDLCc5gDvn4'
   },
   {
     title: 'Literasi Bahasa Inggris: Skimming & Scanning',
     section: 'Literasi',
     topic: 'Bahasa Inggris',
-    content: '# English Literacy for UTBK\n\nKemampuan membaca cepat dan memahami konteks teks berbahasa Inggris.\n\n## Key Skills:\n1. **Skimming**: Reading quickly to get the general idea.\n2. **Scanning**: Looking for specific information.\n3. **Contextual Meaning**: Guessing the meaning of difficult words.\n\n## Referensi Belajar:\n- **Blog Brain Academy**: [Tes Skolastik Literasi Bahasa Inggris (Main idea + 20 soal)](https://www.brainacademy.id/blog/tes-skolastik-literasi-bahasa-inggris)',
+    content: `# English Literacy for UTBK
+
+Kemampuan membaca teks bahasa Inggris dengan cepat dan tepat.
+
+## Key Skills:
+1. **Skimming**: Membaca cepat untuk mendapatkan gambaran umum (main idea, purpose).
+2. **Scanning**: Mencari informasi spesifik (nama tokoh, tanggal, angka).
+3. **Contextual Meaning**: Menebak arti kata sulit berdasarkan kalimat di sekitarnya.
+
+## Strategi Pengerjaan:
+- **Baca Pertanyaan Dulu**: Tahu apa yang dicari sebelum membaca teks.
+- **Perbanyak Kosakata**: Baca artikel bahasa Inggris (berita, jurnal) secara rutin.
+- **Pahami Struktur**: Teks biasanya terdiri dari Pendahuluan, Isi, dan Kesimpulan.
+
+## Referensi Belajar:
+- **Blog Brain Academy**: [Tes Skolastik Literasi Bahasa Inggris (Main idea + 20 soal)](https://www.brainacademy.id/blog/tes-skolastik-literasi-bahasa-inggris)`,
     videoUrl: 'https://www.youtube.com/watch?v=Eusi87jTKyA'
   },
   {
     title: 'Penalaran Matematika (PM): Soal Cerita & Grafik',
     section: 'TPS',
     topic: 'Matematika Terapan',
-    content: '# Penalaran Matematika (PM)\n\nBerbeda dengan PK, Penalaran Matematika lebih fokus pada aplikasi matematika dalam kehidupan sehari-hari.\n\n## Contoh Kasus:\n- Perhitungan bunga bank dan diskon belanja.\n- Analisis data kependudukan atau grafik ekonomi.\n- Perencanaan rute atau jadwal transportasi.\n\n## Kunci Sukses:\n- Ubah narasi soal cerita menjadi model matematika (persamaan).\n- Logika harus berjalan beriringan dengan perhitungan.\n\n## Referensi Belajar:\n- **Blog Brain Academy**: [Soal Tes Skolastik Penalaran Matematika (Grafik + strategi)](https://www.brainacademy.id/blog/soal-tes-skolastik-penalaran-matematika)',
+    content: `# Penalaran Matematika (PM)
+
+PM menguji kemampuan menerapkan konsep matematika dalam situasi dunia nyata.
+
+## Contoh Kasus & Strategi:
+1. **Soal Cerita**: Ubah narasi menjadi model matematika.
+   - Contoh: "Harga 2 buku dan 3 pensil adalah Rp10.000" -> 2x + 3y = 10.000
+2. **Analisis Grafik/Tabel**:
+   - Perhatikan sumbu X dan Y.
+   - Baca judul dan keterangan grafik dengan teliti.
+   - Hitung persentase kenaikan/penurunan jika diminta.
+
+## Kunci Sukses:
+- **Logika**: Jangan hanya menghitung, pahami *apa* yang dihitung.
+- **Ketelitian**: Seringkali jebakan ada pada satuan (misal: meter ke centimeter).
+
+## Referensi Belajar:
+- **Blog Brain Academy**: [Soal Tes Skolastik Penalaran Matematika (Grafik + strategi)](https://www.brainacademy.id/blog/soal-tes-skolastik-penalaran-matematika)`,
     videoUrl: 'https://www.youtube.com/watch?v=v9CruO4jIc8'
   }
 ];
