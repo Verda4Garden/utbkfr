@@ -126,13 +126,17 @@ export default function Dashboard({ userData }: DashboardProps) {
   
   const currentScore = recentResults.length > 0 ? recentResults[recentResults.length - 1].score : 0;
     
-  // Logic: Success probability should consider both score and consistency (number of tryouts)
-  // We use a confidence factor based on the number of tryouts completed
-  const confidenceFactor = Math.min(1, recentResults.length / 5); 
+  // Logic: Success probability based on average score vs target score
+  // We cap it at 99% because nothing is 100% certain, and we don't want >100%
   const rawProgress = (averageScore / targetScore) * 100;
-  const progress = Math.min(100, Math.round(rawProgress * confidenceFactor));
+  
+  // Add a small penalty if they haven't done many tryouts to encourage more practice,
+  // but don't drop it to 20% just because it's their first tryout.
+  const confidencePenalty = Math.max(0, (5 - recentResults.length) * 2); // -2% per missing tryout up to 5
+  const progress = Math.min(99, Math.max(0, Math.round(rawProgress - confidencePenalty)));
+  
   const accuracy = recentTryouts.length > 0 
-    ? Math.round((recentTryouts.reduce((acc, curr) => acc + (curr.score / 10), 0) / recentTryouts.length))
+    ? Math.round((recentTryouts.reduce((acc, curr) => acc + ((curr.score - 200) / 8), 0) / recentTryouts.length))
     : 0;
   
   // Determine trend

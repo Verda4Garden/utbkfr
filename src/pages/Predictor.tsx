@@ -32,7 +32,7 @@ export default function Predictor() {
         collection(db, 'results'),
         where('userId', '==', auth.currentUser.uid),
         orderBy('completedAt', 'desc'),
-        limit(3)
+        limit(5)
       );
       const snapshot = await getDocs(q);
       if (!snapshot.empty) {
@@ -148,7 +148,7 @@ export default function Predictor() {
                   <div className="space-y-3">
                     <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest">
                       <span className="text-gray-400 dark:text-gray-500">Your Score Match</span>
-                      <span className={chance.color}>{Math.round((userScore / uni.passingGrade) * 100)}%</span>
+                      <span className={chance.color}>{Math.min(100, Math.round((userScore / uni.passingGrade) * 100))}%</span>
                     </div>
                     <div className="w-full h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                       <motion.div 

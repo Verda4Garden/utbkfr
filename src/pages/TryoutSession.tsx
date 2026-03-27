@@ -179,7 +179,7 @@ export default function TryoutSession() {
       const sectionScores: Record<string, number> = {};
 
       questions.forEach((q) => {
-        const weight = q.difficulty === 'hard' ? 5 : q.difficulty === 'medium' ? 3 : 1;
+        const weight = q.difficulty === 'super hard' ? 10 : q.difficulty === 'hard' ? 7 : q.difficulty === 'medium' ? 5 : 3;
         totalWeight += weight;
         
         const isCorrect = answers[q.id] === q.correctAnswer;
@@ -189,8 +189,10 @@ export default function TryoutSession() {
         }
       });
 
-      // Simple 0-1000 scale based on weighted accuracy
-      const score = totalWeight > 0 ? Math.round((earnedWeight / totalWeight) * 1000) : 0;
+      // UTBK scale typically ranges from 200 to 1000
+      // Using a non-linear curve (power of 1.5) to simulate IRT where higher scores are exponentially harder to achieve
+      const accuracyRatio = totalWeight > 0 ? earnedWeight / totalWeight : 0;
+      const score = Math.round(200 + Math.pow(accuracyRatio, 1.5) * 800);
 
       const resultData = {
         userId: auth.currentUser?.uid,

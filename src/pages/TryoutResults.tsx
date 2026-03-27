@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db, auth } from '../firebase';
 import { doc, getDoc, setDoc, deleteDoc, collection, query, where, getDocs, updateDoc, arrayUnion } from 'firebase/firestore';
@@ -11,6 +11,7 @@ export default function TryoutResults() {
   const [questions, setQuestions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [savedQuestions, setSavedQuestions] = useState<Set<string>>(new Set());
+  const milestonesCheckedRef = useRef(false);
 
   useEffect(() => {
     const fetchSavedQuestions = async () => {
@@ -50,7 +51,8 @@ export default function TryoutResults() {
         setResult(resultData);
 
         // Check for milestones if not already checked for this result
-        if (!resultData.milestonesChecked && auth.currentUser) {
+        if (!resultData.milestonesChecked && auth.currentUser && !milestonesCheckedRef.current) {
+          milestonesCheckedRef.current = true;
           // Mark result as checked IMMEDIATELY to prevent race conditions
           await updateDoc(doc(db, 'results', resultId!), {
             milestonesChecked: true
@@ -68,7 +70,7 @@ export default function TryoutResults() {
               const hasElite = existingCerts.some((c: any) => c.type === 'Elite Scorer (>750)');
               if (!hasElite) {
                 newCertificates.push({
-                  id: `elite_${resultId}_${Date.now()}`,
+                  id: `elite_scorer`,
                   type: 'Elite Scorer (>750)',
                   earnedAt: new Date().toISOString(),
                   score: Math.round(resultData.score)
@@ -83,7 +85,7 @@ export default function TryoutResults() {
               const hasTen = existingCerts.some((c: any) => c.type === 'Tryout Master (10 Packages)');
               if (!hasTen) {
                 newCertificates.push({
-                  id: `master_${auth.currentUser.uid}_${Date.now()}`,
+                  id: `tryout_master_10`,
                   type: 'Tryout Master (10 Packages)',
                   earnedAt: new Date().toISOString(),
                   score: Math.round(resultData.score)

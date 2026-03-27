@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion } from 'motion/react';
 import { Award, Download, Share2, Brain, CheckCircle2, X } from 'lucide-react';
-import html2canvas from 'html2canvas';
+import * as htmlToImage from 'html-to-image';
 import jsPDF from 'jspdf';
 
 interface CertificateProps {
@@ -18,26 +18,30 @@ export default function CertificateGenerator({ userName, certificateType, date, 
   const downloadCertificate = async () => {
     if (!certificateRef.current) return;
     
-    const canvas = await html2canvas(certificateRef.current, {
-      scale: 2,
-      useCORS: true,
-      backgroundColor: '#ffffff'
-    });
-    
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF('l', 'mm', 'a4');
-    const imgProps = pdf.getImageProperties(imgData);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-    
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save(`UTBK_Certificate_${userName.replace(/\s+/g, '_')}.pdf`);
+    try {
+      const imgData = await htmlToImage.toPng(certificateRef.current, {
+        quality: 1,
+        pixelRatio: 2,
+        backgroundColor: '#ffffff'
+      });
+      
+      const pdf = new jsPDF('l', 'mm', 'a4');
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save(`UTBK_Certificate_${userName.replace(/\s+/g, '_')}.pdf`);
+    } catch (error) {
+      console.error('Error generating certificate:', error);
+      alert('Failed to generate certificate. Please try again.');
+    }
   };
 
   return (
     <div className="space-y-6">
       {/* Hidden Certificate for Generation */}
-      <div className="absolute left-[-9999px] top-[-9999px]">
+      <div className="fixed top-0 left-0 -z-50 opacity-0 pointer-events-none">
         <div 
           ref={certificateRef}
           className="w-[1123px] h-[794px] bg-white p-20 relative overflow-hidden border-[20px] border-[#5A5A40]"
