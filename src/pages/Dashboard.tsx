@@ -136,7 +136,7 @@ export default function Dashboard({ userData }: DashboardProps) {
   const progress = Math.min(99, Math.max(0, Math.round(rawProgress - confidencePenalty)));
   
   const accuracy = recentTryouts.length > 0 
-    ? Math.round((recentTryouts.reduce((acc, curr) => acc + ((curr.score - 200) / 8), 0) / recentTryouts.length))
+    ? Math.round((recentTryouts.reduce((acc, curr) => acc + (curr.score / 10), 0) / recentTryouts.length))
     : 0;
   
   // Determine trend

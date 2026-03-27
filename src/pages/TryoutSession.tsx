@@ -189,10 +189,10 @@ export default function TryoutSession() {
         }
       });
 
-      // UTBK scale typically ranges from 200 to 1000
-      // Using a non-linear curve (power of 1.5) to simulate IRT where higher scores are exponentially harder to achieve
+      // UTBK scoring simulation (0 to 1000)
+      // Using a non-linear curve to simulate IRT where higher scores are harder to achieve
       const accuracyRatio = totalWeight > 0 ? earnedWeight / totalWeight : 0;
-      const score = Math.round(200 + Math.pow(accuracyRatio, 1.5) * 800);
+      const score = Math.round(Math.pow(accuracyRatio, 1.2) * 1000);
 
       const resultData = {
         userId: auth.currentUser?.uid,
