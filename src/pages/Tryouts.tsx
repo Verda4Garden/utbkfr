@@ -49,6 +49,59 @@ export default function Tryouts() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Hardcoded PK & PM Tryout */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white dark:bg-[#151619] rounded-[40px] p-8 shadow-sm border border-indigo-200 dark:border-indigo-900 hover:shadow-xl hover:shadow-indigo-500/10 transition-all group relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 bg-indigo-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+              Special
+            </div>
+            <div className="flex items-center justify-between mb-6">
+              <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform">
+                <GraduationCap size={24} />
+              </div>
+              <div className="flex items-center gap-2 bg-green-50 dark:bg-green-500/10 px-3 py-1 rounded-full">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                <span className="text-[10px] font-bold text-green-500 uppercase tracking-widest">Available</span>
+              </div>
+            </div>
+            
+            <h3 className="text-xl font-serif font-bold text-[#1a1a1a] dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Tryout Khusus PK & PM</h3>
+            
+            <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center gap-1.5 text-gray-400 dark:text-gray-500">
+                <Clock size={14} />
+                <span className="text-xs font-medium">15 Minutes</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-gray-400 dark:text-gray-500">
+                <Zap size={14} />
+                <span className="text-xs font-medium">6 Questions</span>
+              </div>
+            </div>
+
+            <div className="space-y-4 pt-6 border-t border-gray-50 dark:border-gray-800">
+              <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+                <span>Difficulty</span>
+                <span className="text-[#1a1a1a] dark:text-white">Mixed</span>
+              </div>
+              <div className="w-full h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden flex">
+                <div className="h-full bg-emerald-500 w-1/3"></div>
+                <div className="h-full bg-amber-500 w-1/3"></div>
+                <div className="h-full bg-rose-500 w-1/3"></div>
+              </div>
+            </div>
+
+            <Link 
+              to="/tryout-pk-pm"
+              className="mt-8 w-full bg-indigo-600 text-white font-bold py-4 rounded-2xl hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 group/btn shadow-lg shadow-indigo-600/20"
+            >
+              Start Simulation
+              <ChevronRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+
           {tryouts.map((tryout, i) => (
             <motion.div
               key={tryout.id}

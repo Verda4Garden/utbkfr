@@ -19,6 +19,7 @@ import SavedQuestions from './pages/SavedQuestions';
 import AITutor from './pages/AITutor';
 import Predictor from './pages/Predictor';
 import Flashcards from './pages/Flashcards';
+import Quiz from './components/Quiz';
 
 // Components
 import Navbar from './components/Navbar';
@@ -128,6 +129,7 @@ export default function App() {
               <Route path="/" element={user ? <Dashboard userData={userData} /> : <Navigate to="/login" />} />
               <Route path="/tryouts" element={user ? <Tryouts /> : <Navigate to="/login" />} />
               <Route path="/tryout/:id" element={user ? <TryoutSession /> : <Navigate to="/login" />} />
+              <Route path="/tryout-pk-pm" element={user ? <div className="max-w-5xl mx-auto"><Quiz /></div> : <Navigate to="/login" />} />
               <Route path="/tryout-results/:resultId" element={user ? <TryoutResults /> : <Navigate to="/login" />} />
               <Route path="/materials" element={user ? <Materials /> : <Navigate to="/login" />} />
               <Route path="/leaderboard" element={user ? <Leaderboard /> : <Navigate to="/login" />} />
