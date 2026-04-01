@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { GraduationCap, Clock, ChevronRight, Search, Filter, Stethoscope, Zap, Award } from 'lucide-react';
+import { GraduationCap, Clock, ChevronRight, Search, Filter, Stethoscope, Zap, Award, Settings } from 'lucide-react';
 import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
@@ -49,6 +49,33 @@ export default function Tryouts() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Custom Tryout Builder Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-[40px] p-8 shadow-sm border border-indigo-400 hover:shadow-xl hover:shadow-indigo-500/20 transition-all group relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 bg-white/20 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider backdrop-blur-sm">
+              New Feature
+            </div>
+            <div className="flex items-center justify-between mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform backdrop-blur-sm">
+                <Settings size={24} />
+              </div>
+            </div>
+            
+            <h3 className="text-xl font-serif font-bold text-white mb-2">Custom Tryout</h3>
+            <p className="text-indigo-100 text-sm mb-6">Buat sesi latihan sesuai kebutuhanmu. Pilih materi, tingkat kesulitan, dan jumlah soal sendiri.</p>
+
+            <Link 
+              to="/custom-builder"
+              className="mt-auto w-full bg-white text-indigo-600 font-bold py-4 rounded-2xl hover:bg-indigo-50 transition-all flex items-center justify-center gap-2 group/btn shadow-lg"
+            >
+              Buat Sekarang
+              <ChevronRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+
           {/* Hardcoded PK & PM Tryout */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

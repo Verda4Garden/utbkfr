@@ -3,19 +3,33 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import { CheckCircle2, XCircle, ChevronRight, RotateCcw, BrainCircuit } from 'lucide-react';
-import { questions } from '../data/questions';
+import { CheckCircle2, XCircle, ChevronRight, RotateCcw, BrainCircuit, ArrowLeft } from 'lucide-react';
+import { questions as defaultQuestions, Question } from '../data/questions';
 import { cn } from '../lib/utils';
+import { useLocation, useNavigate } from 'react-router-dom';
 import 'katex/dist/katex.min.css';
 
 export default function Quiz() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const activeQuestions: Question[] = location.state?.questions || defaultQuestions;
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isAnswerChecked, setIsAnswerChecked] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
-  const question = questions[currentQuestionIndex];
+  if (!activeQuestions || activeQuestions.length === 0) {
+    return (
+      <div className="text-center py-20">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">Tidak ada soal yang dipilih</h2>
+        <button onClick={() => navigate('/tryouts')} className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold">Kembali ke Tryouts</button>
+      </div>
+    );
+  }
+
+  const question = activeQuestions[currentQuestionIndex];
   const isCorrect = selectedAnswer === question?.correctAnswerIndex;
 
   const handleSelectAnswer = (index: number) => {
@@ -32,7 +46,7 @@ export default function Quiz() {
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < activeQuestions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
       setSelectedAnswer(null);
       setIsAnswerChecked(false);
@@ -47,12 +61,11 @@ export default function Quiz() {
     setSelectedAnswer(null);
     setIsAnswerChecked(false);
     setIsFinished(true);
-    // Add a small delay for smooth animation
     setTimeout(() => setIsFinished(false), 100);
   };
 
   if (isFinished) {
-    const percentage = Math.round((score / questions.length) * 100);
+    const percentage = Math.round((score / activeQuestions.length) * 100);
     let message = '';
     if (percentage === 100) message = 'Sempurna! Kamu sangat siap untuk UTBK SNBT!';
     else if (percentage >= 70) message = 'Bagus sekali! Sedikit lagi latihan pasti bisa maksimal.';
@@ -72,17 +85,26 @@ export default function Quiz() {
         <p className="text-slate-500 dark:text-gray-400 mb-8">Berikut adalah hasil pengerjaanmu.</p>
         
         <div className="bg-slate-50 dark:bg-gray-800/50 rounded-2xl p-8 mb-8">
-          <div className="text-6xl font-black text-indigo-600 dark:text-indigo-400 mb-4">{score} <span className="text-2xl text-slate-400 dark:text-gray-500 font-medium">/ {questions.length}</span></div>
+          <div className="text-6xl font-black text-indigo-600 dark:text-indigo-400 mb-4">{score} <span className="text-2xl text-slate-400 dark:text-gray-500 font-medium">/ {activeQuestions.length}</span></div>
           <p className="text-lg font-medium text-slate-700 dark:text-gray-300">{message}</p>
         </div>
 
-        <button
-          onClick={handleRestart}
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors active:scale-95"
-        >
-          <RotateCcw size={20} />
-          Ulangi Tryout
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            onClick={handleRestart}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors active:scale-95"
+          >
+            <RotateCcw size={20} />
+            Ulangi Tryout
+          </button>
+          <button
+            onClick={() => navigate('/tryouts')}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-100 dark:bg-gray-800 text-slate-700 dark:text-gray-300 rounded-xl font-semibold hover:bg-slate-200 dark:hover:bg-gray-700 transition-colors active:scale-95"
+          >
+            <ArrowLeft size={20} />
+            Kembali ke Menu
+          </button>
+        </div>
       </motion.div>
     );
   }
@@ -93,7 +115,7 @@ export default function Quiz() {
       <div className="mb-8">
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm font-semibold text-slate-500 dark:text-gray-400 uppercase tracking-wider">
-            Soal {currentQuestionIndex + 1} dari {questions.length}
+            Soal {currentQuestionIndex + 1} dari {activeQuestions.length}
           </span>
           <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400">
             Skor: {score}
@@ -103,7 +125,7 @@ export default function Quiz() {
           <motion.div
             className="h-full bg-indigo-600 dark:bg-indigo-500 rounded-full"
             initial={{ width: 0 }}
-            animate={{ width: `${((currentQuestionIndex) / questions.length) * 100}%` }}
+            animate={{ width: `${((currentQuestionIndex) / activeQuestions.length) * 100}%` }}
             transition={{ duration: 0.5 }}
           />
         </div>
@@ -236,7 +258,7 @@ export default function Quiz() {
                     onClick={handleNextQuestion}
                     className="w-full py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-semibold hover:bg-slate-800 dark:hover:bg-gray-100 transition-colors active:scale-[0.98] flex items-center justify-center gap-2"
                   >
-                    {currentQuestionIndex < questions.length - 1 ? 'Lanjut ke Soal Berikutnya' : 'Lihat Hasil Akhir'}
+                    {currentQuestionIndex < activeQuestions.length - 1 ? 'Lanjut ke Soal Berikutnya' : 'Lihat Hasil Akhir'}
                     <ChevronRight size={20} />
                   </button>
                 </motion.div>
